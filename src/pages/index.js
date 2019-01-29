@@ -9,7 +9,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`mobile`, `conference`, `thai`]} />
     <h1>Welcome to Mobile Conference Bangkok 2019</h1>
-    <p>Is this a real life?</p>
+    <p>Is this the real life?</p>
     <p>Is this just fantasy?</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
