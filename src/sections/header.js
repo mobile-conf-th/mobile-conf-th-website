@@ -1,5 +1,5 @@
 import React from 'react'
-import { color, Container } from './common'
+import { color, Container } from '../components/common'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 
