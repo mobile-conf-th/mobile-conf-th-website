@@ -3,27 +3,34 @@ import { color, Container } from '../components/common'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 
+const active = css`
+  border-bottom: solid ${color.green} 3px;
+  padding-bottom: 7px;
+`
+
 const Nav = () => (
   <section
     css={css`
       display: flex;
+      align-items: center;
       justify-content: space-between;
     `}
   >
     <div>LOGO</div>
     <div
       css={css`
-        a {
-          padding: 0 10px;
+        a, button {
+          margin: 0 10px;
         }
       `}
     >
-      <a>Home</a>
+      <a css={active}>Home</a>
       <a>About</a>
       <a>Schedule</a>
       <a>Speakers</a>
       <a>Sponsers</a>
       <a>Location</a>
+      <Button>BUY TICKET</Button>
     </div>
   </section>
 )
