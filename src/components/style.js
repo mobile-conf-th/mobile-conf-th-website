@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from '@emotion/styled'
 
 export const color = {
   green: '#8cc63f',
@@ -10,5 +10,5 @@ export const color = {
 }
 
 export const Container = styled.div`
-    max-width: 960px;
+  max-width: 960px;
 `

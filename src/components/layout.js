@@ -19,8 +19,8 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-          {children}
-          <footer>© {new Date().getFullYear()}, mobile-conf-th team</footer>
+        {children}
+        <footer>© {new Date().getFullYear()}, mobile-conf-th team</footer>
       </>
     )}
   />

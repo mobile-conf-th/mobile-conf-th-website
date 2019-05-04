@@ -5,16 +5,20 @@ import styled from '@emotion/styled'
 import { Container } from './style'
 
 const Nav = () => (
-  <section css={css`
-    display: flex;
-    justify-content: space-between;
-  `}>
+  <section
+    css={css`
+      display: flex;
+      justify-content: space-between;
+    `}
+  >
     <div>LOGO</div>
-    <div css={css`
-      a {
-        padding: 0 10px;
-      }
-    `}>
+    <div
+      css={css`
+        a {
+          padding: 0 10px;
+        }
+      `}
+    >
       <a>Home</a>
       <a>About</a>
       <a>Schedule</a>
@@ -25,10 +29,14 @@ const Nav = () => (
   </section>
 )
 
-const Button = styled.button`
+const baseButtonStyle = css`
   color: white;
   border-radius: 4px;
   padding: 10px 15px;
+`
+
+const Button = styled.button`
+  ${baseButtonStyle}
 
   background-color: ${color.green};
   border: none;
@@ -39,9 +47,7 @@ const Button = styled.button`
 `
 
 const ButtonTransparent = styled.button`
-  color: white;
-  border-radius: 4px;
-  padding: 10px 15px;
+  ${baseButtonStyle}
 
   background: transparent;
   border: solid white 1px;
@@ -60,66 +66,77 @@ const Line = styled.hr`
   border-radius: 2px;
 `
 
+const HeaderSection = styled.section`
+  background: ${color.blue};
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+`
+
+const navContainerStlye = css`
+  color: white;
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto;
+`
+
+const headerContentContainerStyle = css`
+  color: white;
+  margin: auto;
+`
+
+const HeaderContent = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+
+  ${Line} {
+    margin-top: 60px;
+  }
+`
+
+const ActionGroup = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  ${Button} {
+    margin: 0 5px;
+  }
+`
+
+const SubTitle = styled.h2`
+  font-size: 4em;
+  font-weight: normal;
+`
+
+const Title = styled.h1`
+  font-size: 7em;
+`
+
+const green = css`
+  color: ${color.green};
+`
+
 const Header = () => (
-  <section css={css`
-      background: ${color.blue};
-      height: 900px;
-      display: flex;
-      flex-direction: column;
-    `}>
-    <Container css={css`
-      color: white;
-      width: 960px;
-      padding: 10px;
-      margin: 0 auto;
-  `}>
+  <HeaderSection>
+    <Container css={navContainerStlye}>
       <Nav />
     </Container>
-  <Container css={css`
-      color: white;
-      margin: auto;
-  `}>
-    <div css={css`
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      margin: auto;
-
-      ${Line} {
-        margin-top: 60px;
-      }
-    `}>
-      <h2 css={css`
-        font-size: 4em;
-        font-weight: normal;
-      `}>
-        WELCOME TO
-      </h2>
-      <h1 css={css`font-size: 7em;`}>
-        MOBILE CONF
-      </h1>
-      <h1 css={css`
-        font-size: 7em;
-        color: ${color.green};
-      `}>
-        2019
-      </h1>
-      <div css={css`
-        display: flex;
-        width: 100%;
-        justify-content: center;
-
-        ${Button} {
-          margin: 0 5px;
-        }
-      `}>
-        <Button>BUY TICKET</Button>
-        <ButtonTransparent>MORE INFO</ButtonTransparent>
-      </div>
-      <Line/>
-    </div>
-  </Container>
-</section>
+    <Container css={headerContentContainerStyle}>
+      <HeaderContent>
+        <SubTitle>WELCOME TO</SubTitle>
+        <Title>MOBILE CONF</Title>
+        <Title css={green}>2019</Title>
+        <ActionGroup>
+          <Button>BUY TICKET</Button>
+          <ButtonTransparent>MORE INFO</ButtonTransparent>
+        </ActionGroup>
+        <Line />
+      </HeaderContent>
+    </Container>
+  </HeaderSection>
 )
 
 export default Header
