@@ -1,8 +1,7 @@
 import React from 'react'
-import { color } from './style'
+import { color, Container } from './common'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
-import { Container } from './style'
 
 const Nav = () => (
   <section
