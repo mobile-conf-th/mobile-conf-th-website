@@ -1,8 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
+import { color } from './style'
+import { css } from '@emotion/core'
 
 import './layout.css'
+
+const Footer = () => (
+  <footer css={css`
+    background-color: ${color.blue};
+    color: white;
+    text-align: center;
+  `}>
+    © 2019 All right reserved, Mobile Conf 2019
+  </footer>
+)
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -18,7 +30,7 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         {children}
-        <footer>© {new Date().getFullYear()}, mobile-conf-th team</footer>
+        <Footer/>
       </>
     )}
   />
