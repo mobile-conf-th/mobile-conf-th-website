@@ -10,5 +10,5 @@ export const color = {
 }
 
 export const Container = styled.div`
-  max-width: 960px;
+  max-width: 1000px;
 `

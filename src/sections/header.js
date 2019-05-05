@@ -79,14 +79,14 @@ const HeaderSection = styled.section`
   flex-direction: column;
 `
 
-const navContainerStlye = css`
+const navContainer = css`
   color: white;
   width: 100%;
   padding: 10px;
   margin: 0 auto;
 `
 
-const headerContentContainerStyle = css`
+const headerContentContainer = css`
   color: white;
   margin: auto;
 `
@@ -127,10 +127,10 @@ const green = css`
 
 const Header = () => (
   <HeaderSection>
-    <Container css={navContainerStlye}>
+    <Container css={navContainer}>
       <Nav />
     </Container>
-    <Container css={headerContentContainerStyle}>
+    <Container css={headerContentContainer}>
       <HeaderContent>
         <SubTitle>WELCOME TO</SubTitle>
         <Title>MOBILE CONF</Title>
