@@ -19,7 +19,8 @@ const Nav = () => (
     <div>LOGO</div>
     <div
       css={css`
-        a, button {
+        a,
+        button {
           margin: 0 10px;
         }
       `}
