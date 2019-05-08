@@ -1,9 +1,10 @@
 import React from 'react'
 import SEO from '../components/seo'
+import Layout from '../components/layout'
 import Header from '../sections/header'
 import Countdown from '../sections/countdown'
 import AboutUs from '../sections/about-us'
-import Layout from '../components/layout'
+import Schedule from '../sections/schedule'
 
 import { css } from '@emotion/core'
 
@@ -19,6 +20,7 @@ const IndexPage = () => (
       <Countdown />
     </div>
     <AboutUs />
+    <Schedule />
   </Layout>
 )
 

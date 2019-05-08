@@ -7,6 +7,7 @@ export const color = {
   lightBlue: '#00FFFF',
   brown: '8CC63F',
   brownGray: '#7D7D7D',
+  gray: '#F2F2F2',
 }
 
 export const Container = styled.div`
