@@ -5,6 +5,7 @@ import Header from '../sections/header'
 import Countdown from '../sections/countdown'
 import AboutUs from '../sections/about-us'
 import Schedule from '../sections/schedule'
+import OurSpeakers from '../sections/our-speakers'
 
 import { css } from '@emotion/core'
 
@@ -21,6 +22,7 @@ const IndexPage = () => (
     </div>
     <AboutUs />
     <Schedule />
+    <OurSpeakers />
   </Layout>
 )
 
