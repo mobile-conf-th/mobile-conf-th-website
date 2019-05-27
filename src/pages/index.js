@@ -15,7 +15,7 @@ const IndexPage = () => (
     <Header />
     <div
       css={css`
-        margin-top: -90px;
+        margin-top: -110px;
       `}
     >
       <Countdown />
