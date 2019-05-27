@@ -114,8 +114,8 @@ const ActionGroup = styled.div`
 `
 
 const SubTitle = styled.h2`
-  font-size: 4em;
-  font-weight: normal;
+  font-size: 48px;
+  font-weight: 300;
 `
 
 const Title = styled.h1`
