@@ -22,17 +22,25 @@ const Box = ({ num, unit }) => (
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       background-color: white;
       box-shadow: 0px 17px 15px -1px rgba(0, 0, 0, 0.1);
-      width: 70px;
-      height: 70px;
-      padding: 5px 2px;
-      border-radius: 4px;
+      width: 100px;
+      height: 100px;
+      border-radius: 6px;
+      box-shadow: 0 0 19px 1px rgba(0, 0, 0, 0.12);
     `}
   >
-    <div>{num}</div>
+    <div css={css`
+      font-size: 36px;
+      margin: 6px auto;
+    `}>
+      {num}
+    </div>
     <div
       css={css`
+        font-size: 12px;
+        letter-spacing: 0.2px;
         color: ${color.brownGray};
       `}
     >
@@ -81,24 +89,27 @@ const Countdown = () => {
       <h3
         css={css`
           color: white;
+          font-size: 20px;
+          font-weight: 600;
         `}
       >
-        Event will start in
+        The biggest mobile developer conference in Thailand will start in 
       </h3>
       <div
         css={css`
           display: flex;
           height: 100px;
+          margin-top: 32px;
 
           & > div {
             margin: 0 10px;
           }
         `}
       >
-        <Box num={remainingTime.days} unit="days" />
-        <Box num={remainingTime.hours} unit="hours" />
-        <Box num={remainingTime.minutes} unit="minutes" />
-        <Box num={remainingTime.seconds} unit="seconds" />
+        <Box num={remainingTime.days} unit="DAYS" />
+        <Box num={remainingTime.hours} unit="HOURS" />
+        <Box num={remainingTime.minutes} unit="MINUTES" />
+        <Box num={remainingTime.seconds} unit="SECONDS" />
       </div>
     </Container>
   )

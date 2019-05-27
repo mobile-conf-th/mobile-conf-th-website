@@ -31,15 +31,17 @@ const Nav = () => (
       <a>Speakers</a>
       <a>Sponsers</a>
       <a>Location</a>
-      <Button>BUY TICKET</Button>
     </div>
   </section>
 )
 
 const baseButtonStyle = css`
   color: white;
-  border-radius: 4px;
   padding: 10px 15px;
+  border-radius: 6px;
+  width: 175px;
+  height: 50px;
+  font-weight: 600;
 `
 
 const Button = styled.button`
@@ -57,7 +59,7 @@ const ButtonTransparent = styled.button`
   ${baseButtonStyle}
 
   background: transparent;
-  border: solid white 1px;
+  border: solid white 2px;
 
   &:hover {
     color: ${color.blue};
@@ -65,17 +67,9 @@ const ButtonTransparent = styled.button`
   }
 `
 
-const Line = styled.hr`
-  color: white;
-  height: 2px;
-  width: 120px;
-  background-color: white;
-  border-radius: 2px;
-`
-
 const HeaderSection = styled.section`
   background: ${color.blue};
-  height: 900px;
+  height: 700px;
   display: flex;
   flex-direction: column;
 `
@@ -89,37 +83,38 @@ const navContainer = css`
 
 const headerContentContainer = css`
   color: white;
+  margin-top: 110px;
   margin: auto;
 `
 
 const HeaderContent = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: auto;
-
-  ${Line} {
-    margin-top: 60px;
-  }
+  margin: 0 auto;
+  text-align: center;
 `
 
 const ActionGroup = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
+  margin-top: 50px;
 
-  ${Button} {
-    margin: 0 5px;
+  ${Button}, ${ButtonTransparent} {
+    margin: 0 17px;
   }
 `
 
 const SubTitle = styled.h2`
+  line-height: 1;
   font-size: 48px;
   font-weight: 300;
+  margin-bottom: 20px;
 `
 
 const Title = styled.h1`
-  font-size: 7em;
+  line-height: 1;
+  font-size: 84px;
+  font-weight: 700;
+  margin-bottom: 5px;
 `
 
 const green = css`
@@ -136,12 +131,11 @@ const Header = () => (
         <SubTitle>WELCOME TO</SubTitle>
         <Title>MOBILE CONF</Title>
         <Title css={green}>2019</Title>
-        <ActionGroup>
-          <Button>BUY TICKET</Button>
-          <ButtonTransparent>MORE INFO</ButtonTransparent>
-        </ActionGroup>
-        <Line />
       </HeaderContent>
+      <ActionGroup>
+        <Button>BUY TICKET</Button>
+        <ButtonTransparent>MORE INFO</ButtonTransparent>
+      </ActionGroup>
     </Container>
   </HeaderSection>
 )
