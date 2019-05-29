@@ -1,39 +1,78 @@
-import React from 'react'
-import { color, Container } from '../components/common'
-import { css } from '@emotion/core'
-import styled from '@emotion/styled'
+import React, { useRef, useEffect, useState } from "react";
+import { color, Container } from "../components/common";
+import { css } from "@emotion/core";
+import styled from "@emotion/styled";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const active = css`
   border-bottom: solid ${color.green} 3px;
   padding-bottom: 7px;
-`
+`;
 
-const Nav = () => (
-  <section
-    css={css`
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    `}
-  >
-    <div>LOGO</div>
-    <div
+const Nav = () => {
+  const [isTop, setIsTop] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener(
+      "scroll",
+      () => {
+        setIsTop(window.scrollY === 0);
+      },
+      true
+    );
+  }, []);
+
+  return (
+    <section
       css={css`
-        a,
-        button {
-          margin: 0 10px;
-        }
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -ms-sticky;
+        position: -o-sticky;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        transition: background-color 0.5s linear;
+        ${isTop
+          ? ``
+          : `
+          background-color: ${color.darkGary};
+        `}
       `}
     >
-      <a css={active}>Home</a>
-      <a>About</a>
-      <a>Schedule</a>
-      <a>Speakers</a>
-      <a>Sponsers</a>
-      <a>Location</a>
-    </div>
-  </section>
-)
+      <Container
+        css={css`
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          height: 65px;
+          justify-content: space-between;
+        `}
+      >
+        <div>LOGO</div>
+        <div
+          css={css`
+            a {
+              margin: 0 10px;
+              color: white;
+              text-decoration: none;
+            }
+          `}
+        >
+          <AnchorLink href="#home" css={active}>
+            Home
+          </AnchorLink>
+          <AnchorLink href="#about">About</AnchorLink>
+          <AnchorLink href="#schedule">Schedule</AnchorLink>
+          <AnchorLink href="#speakers">Speakers</AnchorLink>
+          <a>Sponsers</a>
+          <a>Location</a>
+        </div>
+      </Container>
+    </section>
+  );
+};
 
 const baseButtonStyle = css`
   color: white;
@@ -42,7 +81,7 @@ const baseButtonStyle = css`
   width: 175px;
   height: 50px;
   font-weight: 600;
-`
+`;
 
 const Button = styled.button`
   ${baseButtonStyle}
@@ -53,7 +92,7 @@ const Button = styled.button`
   &:hover {
     background-color: ${color.lightGreen};
   }
-`
+`;
 
 const ButtonTransparent = styled.button`
   ${baseButtonStyle}
@@ -65,32 +104,32 @@ const ButtonTransparent = styled.button`
     color: ${color.blue};
     background-color: white;
   }
-`
+`;
 
 const HeaderSection = styled.section`
   background: ${color.blue};
   height: 700px;
   display: flex;
   flex-direction: column;
-`
+`;
 
 const navContainer = css`
   color: white;
   width: 100%;
   padding: 10px;
   margin: 0 auto;
-`
+`;
 
 const headerContentContainer = css`
   color: white;
   margin-top: 110px;
   margin: auto;
-`
+`;
 
 const HeaderContent = styled.div`
   margin: 0 auto;
   text-align: center;
-`
+`;
 
 const ActionGroup = styled.div`
   display: flex;
@@ -101,31 +140,29 @@ const ActionGroup = styled.div`
   ${Button}, ${ButtonTransparent} {
     margin: 0 17px;
   }
-`
+`;
 
 const SubTitle = styled.h2`
   line-height: 1;
   font-size: 48px;
   font-weight: 300;
   margin-bottom: 20px;
-`
+`;
 
 const Title = styled.h1`
   line-height: 1;
   font-size: 84px;
   font-weight: 700;
   margin-bottom: 5px;
-`
+`;
 
 const green = css`
   color: ${color.green};
-`
+`;
 
 const Header = () => (
-  <HeaderSection>
-    <Container css={navContainer}>
-      <Nav />
-    </Container>
+  <HeaderSection id="home">
+    <Nav />
     <Container css={headerContentContainer}>
       <HeaderContent>
         <SubTitle>WELCOME TO</SubTitle>
@@ -138,6 +175,6 @@ const Header = () => (
       </ActionGroup>
     </Container>
   </HeaderSection>
-)
+);
 
-export default Header
+export default Header;
