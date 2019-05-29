@@ -1,12 +1,14 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { color, Container } from "../components/common";
+import Img from "gatsby-image";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
+import { StaticQuery, graphql } from "gatsby";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const active = css`
   border-bottom: solid ${color.green} 3px;
-  padding-bottom: 7px;
+  padding-bottom: 10px;
 `;
 
 const Nav = () => {
@@ -46,16 +48,32 @@ const Nav = () => {
           margin: 0 auto;
           display: flex;
           align-items: center;
-          height: 65px;
+          height: 75px;
           justify-content: space-between;
         `}
       >
-        <div>LOGO</div>
+        <StaticQuery
+          query={graphql`
+            query {
+              placeholderImage: file(relativePath: { eq: "logo.png" }) {
+                childImageSharp {
+                  fixed(width: 105, height: 51) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
+            }
+          `}
+          render={data => (
+            <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+          )}
+        />
         <div
           css={css`
             a {
               margin: 0 10px;
               color: white;
+              font-size: 16px;
               text-decoration: none;
             }
           `}
