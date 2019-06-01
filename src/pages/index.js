@@ -39,6 +39,33 @@ const Location = () => (
       942 Rama 4 road, Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha
       Nakhon 10500
     </p>
+    <div
+      css={css`
+        position: relative;
+        overflow: hidden;
+        padding-top: 56.25%;
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
+      `}
+    >
+      <iframe
+        width="800"
+        height="300"
+        id="gmap_canvas"
+        src="https://maps.google.com/maps?q=Charn%20Issara%20Tower%201&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+      />
+    </div>
   </GenSection>
 );
 
