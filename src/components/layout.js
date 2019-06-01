@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
-import { color } from './common'
-import { css } from '@emotion/core'
+import React from "react";
+import PropTypes from "prop-types";
+import { StaticQuery, graphql } from "gatsby";
+import { color } from "./common";
+import { css } from "@emotion/core";
 
-import './layout.css'
+import "./layout.css";
 
 const Footer = () => (
   <footer
@@ -12,11 +12,16 @@ const Footer = () => (
       background-color: ${color.blue};
       color: white;
       text-align: center;
+      height: 75px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
     `}
   >
     © 2019 All right reserved, Mobile Conf 2019
   </footer>
-)
+);
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -36,10 +41,10 @@ const Layout = ({ children }) => (
       </>
     )}
   />
-)
+);
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  children: PropTypes.node.isRequired
+};
 
-export default Layout
+export default Layout;
