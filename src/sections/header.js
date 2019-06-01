@@ -16,6 +16,15 @@ const active = css`
   }
 `;
 
+const pointer = css`
+  cursor: pointer;
+`;
+const linkConfig = {
+  spy: true,
+  smooth: true,
+  activeClass: active.className,
+  css: pointer
+};
 const Nav = () => {
   const [isTop, setIsTop] = useState(true);
 
@@ -65,40 +74,24 @@ const Nav = () => {
           `}
         >
           <Global styles={active} />
-          <Link
-            to="home"
-            spy={true}
-            smooth={true}
-            activeClass={active.className}
-          >
+          <Link to="home" {...linkConfig}>
             Home
           </Link>
-          <Link
-            to="about"
-            spy={true}
-            smooth={true}
-            activeClass={active.className}
-          >
+          <Link to="about" {...linkConfig}>
             About
           </Link>
-          <Link
-            to="schedule"
-            spy={true}
-            smooth={true}
-            activeClass={active.className}
-          >
+          <Link to="schedule" {...linkConfig}>
             Schedule
           </Link>
-          <Link
-            to="speakers"
-            spy={true}
-            smooth={true}
-            activeClass={active.className}
-          >
+          <Link to="speakers" {...linkConfig}>
             Speakers
           </Link>
-          <a>Sponsers</a>
-          <a>Location</a>
+          <Link to="sponsors" {...linkConfig}>
+            Sponsers
+          </Link>
+          <Link to="location" {...linkConfig}>
+            Location
+          </Link>
         </div>
       </Container>
     </section>
