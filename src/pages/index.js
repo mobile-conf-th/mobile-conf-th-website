@@ -7,6 +7,7 @@ import Schedule from "../sections/schedule";
 import OurSpeakers from "../sections/our-speakers";
 import { color } from "../components/common";
 import GenSection from "../components/gen-section";
+import { css } from "@emotion/core";
 
 const OurSponsors = () => (
   <GenSection
@@ -25,12 +26,14 @@ const OurSponsors = () => (
 );
 const Location = () => (
   <GenSection id="location" title="LOCATION">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h4
+      css={css`
+        font-size: 20px;
+        font-weight: 600;
+      `}
+    >
+      Charn Issara Tower 1
+    </h4>
   </GenSection>
 );
 

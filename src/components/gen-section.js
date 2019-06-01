@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, color } from "../components/common";
+import { Container, color as c } from "../components/common";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 
@@ -16,10 +16,10 @@ const H2 = styled.h2`
 `;
 
 const Line = styled.hr`
-  color: ${color.green};
+  color: ${c.green};
   height: 2px;
   width: 60px;
-  background-color: ${color.green};
+  background-color: ${c.green};
   border-radius: 2px;
   margin: 30px 0;
 `;
@@ -34,7 +34,7 @@ const GenSection = ({ title, children, color, textColor, id, customCss }) => (
     css={[
       css`
         background-color: ${color || "white"};
-        color: ${textColor || "black"};
+        color: ${textColor || c.darkGray};
       `,
       customCss
     ]}
