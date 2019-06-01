@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { color, Container } from "../components/common";
-import Img from "gatsby-image";
+import { Logo } from "../components/logo";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
-import { StaticQuery, graphql } from "gatsby";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+
+import { StaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import BackgroundImage from "gatsby-background-image";
 
 const active = css`
   border-bottom: solid ${color.green} 3px;
@@ -27,11 +30,7 @@ const Nav = () => {
   return (
     <section
       css={css`
-        position: -webkit-sticky;
-        position: -moz-sticky;
-        position: -ms-sticky;
-        position: -o-sticky;
-        position: sticky;
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
@@ -52,22 +51,7 @@ const Nav = () => {
           justify-content: space-between;
         `}
       >
-        <StaticQuery
-          query={graphql`
-            query {
-              placeholderImage: file(relativePath: { eq: "logo.png" }) {
-                childImageSharp {
-                  fixed(width: 105, height: 51) {
-                    ...GatsbyImageSharpFixed
-                  }
-                }
-              }
-            }
-          `}
-          render={data => (
-            <Img fixed={data.placeholderImage.childImageSharp.fixed} />
-          )}
-        />
+        <Logo />
         <div
           css={css`
             a {
@@ -125,7 +109,6 @@ const ButtonTransparent = styled.button`
 `;
 
 const HeaderSection = styled.section`
-  background: ${color.blue};
   height: 700px;
   display: flex;
   flex-direction: column;
@@ -178,21 +161,54 @@ const green = css`
   color: ${color.green};
 `;
 
+const Background = styled(({ className, children }) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        bg: file(relativePath: { eq: "header-background.jpg" }) {
+          childImageSharp {
+            fluid(quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <BackgroundImage
+        Tag="section"
+        className={className}
+        fluid={data.bg.childImageSharp.fluid}
+        backgroundColor={color.darkGary}
+      >
+        {children}
+      </BackgroundImage>
+    )}
+  />
+))`
+  width: 100%;
+  background-position: bottom center;
+  background-size: cover;
+  z-index: -1;
+`;
+
 const Header = () => (
-  <HeaderSection id="home">
-    <Nav />
-    <Container css={headerContentContainer}>
-      <HeaderContent>
-        <SubTitle>WELCOME TO</SubTitle>
-        <Title>MOBILE CONF</Title>
-        <Title css={green}>2019</Title>
-      </HeaderContent>
-      <ActionGroup>
-        <Button>BUY TICKET</Button>
-        <ButtonTransparent>MORE INFO</ButtonTransparent>
-      </ActionGroup>
-    </Container>
-  </HeaderSection>
+  <Background>
+    <HeaderSection id="home">
+      <Nav />
+      <Container css={headerContentContainer}>
+        <HeaderContent>
+          <SubTitle>WELCOME TO</SubTitle>
+          <Title>MOBILE CONF</Title>
+          <Title css={green}>2019</Title>
+        </HeaderContent>
+        <ActionGroup>
+          <Button>BUY TICKET</Button>
+          <ButtonTransparent>MORE INFO</ButtonTransparent>
+        </ActionGroup>
+      </Container>
+    </HeaderSection>
+  </Background>
 );
 
 export default Header;
