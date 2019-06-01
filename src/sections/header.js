@@ -65,7 +65,7 @@ const Nav = () => {
         ${isTop
           ? ``
           : `
-          background-color: ${color.darkGary};
+          background-color: ${color.darkGray};
         `}
       `}
     >
@@ -76,6 +76,8 @@ const Nav = () => {
           align-items: center;
           height: 75px;
           justify-content: space-between;
+          max-width: 1248px;
+          width: 100%;
         `}
       >
         <Logo />
@@ -108,11 +110,25 @@ const Nav = () => {
           <Link to="location" {...linkConfig}>
             Location
           </Link>
+          <button
+            css={[
+              css`
+                margin-left: 50px;
+
+                ${isTop ? transparentButton : greenButton}
+              `,
+              smallButton
+            ]}
+          >
+            BUY TICKET
+          </button>
         </div>
       </Container>
     </section>
   );
 };
+
+// Buttons
 
 const baseButtonStyle = css`
   color: white;
@@ -121,11 +137,11 @@ const baseButtonStyle = css`
   width: 175px;
   height: 50px;
   font-weight: 600;
+  transition: border, background-color 0.4s linear;
 `;
 
-const Button = styled.button`
+const greenButton = css`
   ${baseButtonStyle}
-
   background-color: ${color.green};
   border: none;
 
@@ -134,29 +150,37 @@ const Button = styled.button`
   }
 `;
 
-const ButtonTransparent = styled.button`
-  ${baseButtonStyle}
+const Button = styled.button`
+  ${greenButton}
+`;
 
+const transparentButton = css`
+  ${baseButtonStyle}
   background: transparent;
   border: solid white 2px;
 
   &:hover {
-    color: ${color.blue};
+    color: ${color.darkGray};
     background-color: white;
   }
 `;
+
+const ButtonTransparent = styled.button`
+  ${transparentButton}
+`;
+
+const smallButton = css`
+  font-size: 16px;
+  width: 150px;
+  height: 40px;
+  line-height: 1.1;
+`;
+// Header css
 
 const HeaderSection = styled.section`
   height: 700px;
   display: flex;
   flex-direction: column;
-`;
-
-const navContainer = css`
-  color: white;
-  width: 100%;
-  padding: 10px;
-  margin: 0 auto;
 `;
 
 const headerContentContainer = css`
@@ -217,7 +241,7 @@ const Background = styled(({ className, children }) => (
         Tag="section"
         className={className}
         fluid={data.bg.childImageSharp.fluid}
-        backgroundColor={color.darkGary}
+        backgroundColor={color.darkGray}
       >
         {children}
       </BackgroundImage>
@@ -227,7 +251,6 @@ const Background = styled(({ className, children }) => (
   width: 100%;
   background-position: bottom center;
   background-size: cover;
-  z-index: -1;
 `;
 
 const Header = () => (

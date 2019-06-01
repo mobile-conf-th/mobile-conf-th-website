@@ -8,9 +8,10 @@ export const color = {
   brown: "8CC63F",
   brownGray: "#7D7D7D",
   gray: "#F2F2F2",
-  darkGary: "#4D4D4D"
+  darkGray: "#4D4D4D"
 };
 
 export const Container = styled.div`
   max-width: 1000px;
+  padding: 0 24px;
 `;
