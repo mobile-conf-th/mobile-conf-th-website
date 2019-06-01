@@ -1,20 +1,20 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { Container, color } from '../components/common'
-import { css } from '@emotion/core'
+import React, { useState, useEffect } from "react";
+import { Container, color } from "./common";
+import { css } from "@emotion/core";
 import {
   differenceInDays,
   differenceInHours,
   differenceInMinutes,
   differenceInSeconds,
-  parseISO,
-} from 'date-fns'
+  parseISO
+} from "date-fns";
 
 const countdownContainer = css`
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 const Box = ({ num, unit }) => (
   <div
@@ -31,10 +31,12 @@ const Box = ({ num, unit }) => (
       box-shadow: 0 0 19px 1px rgba(0, 0, 0, 0.12);
     `}
   >
-    <div css={css`
-      font-size: 36px;
-      margin: 6px auto;
-    `}>
+    <div
+      css={css`
+        font-size: 36px;
+        margin: 6px auto;
+      `}
+    >
       {num}
     </div>
     <div
@@ -47,42 +49,42 @@ const Box = ({ num, unit }) => (
       {unit}
     </div>
   </div>
-)
+);
 
 const remainingTimeUntil = (now, target) => {
-  const days = differenceInDays(target, now)
-  const hours = differenceInHours(target, now)
-  const minutes = differenceInMinutes(target, now)
-  const seconds = differenceInSeconds(target, now)
+  const days = differenceInDays(target, now);
+  const hours = differenceInHours(target, now);
+  const minutes = differenceInMinutes(target, now);
+  const seconds = differenceInSeconds(target, now);
 
   if (seconds <= 0) {
     return {
       days: 0,
       hours: 0,
       minutes: 0,
-      seconds: 0,
-    }
+      seconds: 0
+    };
   }
 
   return {
     days,
     hours: hours - days * 24,
     minutes: minutes - hours * 60,
-    seconds: seconds - minutes * 60,
-  }
-}
+    seconds: seconds - minutes * 60
+  };
+};
 
 const getRemainingTime = () =>
-  remainingTimeUntil(new Date(), parseISO('2019-06-11T11:30:30+07:00'))
+  remainingTimeUntil(new Date(), parseISO("2019-06-11T11:30:30+07:00"));
 
-const Countdown = () => {
-  const [remainingTime, setRemainingTime] = useState(getRemainingTime())
+export const Countdown = () => {
+  const [remainingTime, setRemainingTime] = useState(getRemainingTime());
 
   useEffect(() => {
     setInterval(() => {
-      setRemainingTime(getRemainingTime())
-    }, 1000)
-  }, [])
+      setRemainingTime(getRemainingTime());
+    }, 1000);
+  }, []);
 
   return (
     <Container css={countdownContainer}>
@@ -93,7 +95,7 @@ const Countdown = () => {
           font-weight: 600;
         `}
       >
-        The biggest mobile developer conference in Thailand will start in 
+        The biggest mobile developer conference in Thailand will start in
       </h3>
       <div
         css={css`
@@ -112,7 +114,5 @@ const Countdown = () => {
         <Box num={remainingTime.seconds} unit="SECONDS" />
       </div>
     </Container>
-  )
-}
-
-export default Countdown
+  );
+};

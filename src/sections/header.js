@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { color, Container } from "../components/common";
 import { Logo } from "../components/logo";
-import { css } from "@emotion/core";
+import { Countdown } from "../components/countdown";
+import { Global, css } from "@emotion/core";
 import styled from "@emotion/styled";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Link } from "react-scroll";
 
 import { StaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
 import BackgroundImage from "gatsby-background-image";
 
 const active = css`
-  border-bottom: solid ${color.green} 3px;
-  padding-bottom: 10px;
+  .active {
+    border-bottom: solid ${color.green} 3px;
+    padding-bottom: 10px;
+  }
 `;
 
 const Nav = () => {
@@ -62,12 +64,39 @@ const Nav = () => {
             }
           `}
         >
-          <AnchorLink href="#home" css={active}>
+          <Global styles={active} />
+          <Link
+            to="home"
+            spy={true}
+            smooth={true}
+            activeClass={active.className}
+          >
             Home
-          </AnchorLink>
-          <AnchorLink href="#about">About</AnchorLink>
-          <AnchorLink href="#schedule">Schedule</AnchorLink>
-          <AnchorLink href="#speakers">Speakers</AnchorLink>
+          </Link>
+          <Link
+            to="about"
+            spy={true}
+            smooth={true}
+            activeClass={active.className}
+          >
+            About
+          </Link>
+          <Link
+            to="schedule"
+            spy={true}
+            smooth={true}
+            activeClass={active.className}
+          >
+            Schedule
+          </Link>
+          <Link
+            to="speakers"
+            spy={true}
+            smooth={true}
+            activeClass={active.className}
+          >
+            Speakers
+          </Link>
           <a>Sponsers</a>
           <a>Location</a>
         </div>
@@ -193,22 +222,31 @@ const Background = styled(({ className, children }) => (
 `;
 
 const Header = () => (
-  <Background>
-    <HeaderSection id="home">
-      <Nav />
-      <Container css={headerContentContainer}>
-        <HeaderContent>
-          <SubTitle>WELCOME TO</SubTitle>
-          <Title>MOBILE CONF</Title>
-          <Title css={green}>2019</Title>
-        </HeaderContent>
-        <ActionGroup>
-          <Button>BUY TICKET</Button>
-          <ButtonTransparent>MORE INFO</ButtonTransparent>
-        </ActionGroup>
-      </Container>
-    </HeaderSection>
-  </Background>
+  <div id="home">
+    <Nav />
+    <Background>
+      <HeaderSection>
+        <Container css={headerContentContainer}>
+          <HeaderContent>
+            <SubTitle>WELCOME TO</SubTitle>
+            <Title>MOBILE CONF</Title>
+            <Title css={green}>2019</Title>
+          </HeaderContent>
+          <ActionGroup>
+            <Button>BUY TICKET</Button>
+            <ButtonTransparent>MORE INFO</ButtonTransparent>
+          </ActionGroup>
+        </Container>
+      </HeaderSection>
+    </Background>
+    <div
+      css={css`
+        margin-top: -110px;
+      `}
+    >
+      <Countdown />
+    </div>
+  </div>
 );
 
 export default Header;
