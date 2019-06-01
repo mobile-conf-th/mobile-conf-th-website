@@ -11,7 +11,9 @@ const sectionContainer = css`
   padding: 100px;
 `;
 
-const H2 = styled.h2``;
+const H2 = styled.h2`
+  font-size: 30px;
+`;
 
 const Line = styled.hr`
   color: ${color.green};
@@ -19,30 +21,36 @@ const Line = styled.hr`
   width: 60px;
   background-color: ${color.green};
   border-radius: 2px;
+  margin: 30px 0;
 `;
 
 const Section = styled.section`
   width: 100%;
 `;
 
-const GenSection = ({ title, children, color, id }) => (
+const GenSection = ({ title, children, color, textColor, id, customCss }) => (
   <Section
     id={id}
-    css={css`
-      background-color: ${color || "white"};
-    `}
+    css={[
+      css`
+        background-color: ${color || "white"};
+        color: ${textColor || "black"};
+      `,
+      customCss
+    ]}
   >
     <Container css={[sectionContainer]}>
       <H2>{title}</H2>
       <Line />
-      <p
+      <div
         css={css`
+          margin-top: 21px;
           max-width: 800px;
           text-align: center;
         `}
       >
         {children}
-      </p>
+      </div>
     </Container>
   </Section>
 );

@@ -248,7 +248,10 @@ const Header = () => (
     </Background>
     <div
       css={css`
-        margin-top: -110px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 140px;
       `}
     >
       <Countdown />
