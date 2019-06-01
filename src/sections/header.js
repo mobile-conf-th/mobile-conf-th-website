@@ -10,20 +10,34 @@ import { StaticQuery, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 
 const active = css`
-  .active {
-    border-bottom: solid ${color.green} 3px;
-    padding-bottom: 10px;
+  .active:after {
+    background-color: ${color.green} !important;
   }
 `;
 
-const pointer = css`
+const navLink = css`
+  position: relative;
   cursor: pointer;
+  border: solid transparent 3px;
+  padding-bottom: 10px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background-color: transparent;
+    transition: background-color 0.4s ease;
+  }
 `;
+
 const linkConfig = {
   spy: true,
   smooth: true,
   activeClass: active.className,
-  css: pointer
+  css: navLink
 };
 const Nav = () => {
   const [isTop, setIsTop] = useState(true);
