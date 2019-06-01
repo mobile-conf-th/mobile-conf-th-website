@@ -36,6 +36,7 @@ const navLink = css`
 const linkConfig = {
   spy: true,
   smooth: true,
+  offset: -100,
   activeClass: active.className,
   css: navLink
 };
