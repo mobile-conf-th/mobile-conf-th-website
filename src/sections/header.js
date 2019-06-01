@@ -59,7 +59,7 @@ const Nav = () => {
         top: 0;
         left: 0;
         right: 0;
-        transition: background-color 0.5s linear;
+        transition: background-color 0.4s linear;
         ${isTop
           ? ``
           : `
