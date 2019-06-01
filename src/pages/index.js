@@ -30,10 +30,15 @@ const Location = () => (
       css={css`
         font-size: 20px;
         font-weight: 600;
+        padding: 15px;
       `}
     >
       Charn Issara Tower 1
     </h4>
+    <p>
+      942 Rama 4 road, Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha
+      Nakhon 10500
+    </p>
   </GenSection>
 );
 
