@@ -9,7 +9,7 @@ export const Logo = () => (
         logo: file(relativePath: { eq: "logo.png" }) {
           childImageSharp {
             fixed(width: 105, height: 51) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_tracedSVG
             }
           }
         }

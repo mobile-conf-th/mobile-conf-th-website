@@ -8,7 +8,8 @@ const sectionContainer = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px;
+  padding: 100px 24px;
+  width: 100%;
 `;
 
 const H2 = styled.h2`
@@ -35,6 +36,7 @@ const GenSection = ({ title, children, color, textColor, id, customCss }) => (
       css`
         background-color: ${color || "white"};
         color: ${textColor || c.darkGray};
+        width: 100%;
       `,
       customCss
     ]}
@@ -45,8 +47,8 @@ const GenSection = ({ title, children, color, textColor, id, customCss }) => (
       <div
         css={css`
           margin-top: 21px;
-          max-width: 800px;
           text-align: center;
+          width: 100%;
         `}
       >
         {children}

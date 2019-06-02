@@ -34,6 +34,7 @@ const Location = () => (
       `}
     >
       <iframe
+        title="map"
         width="800"
         height="300"
         src="https://maps.google.com/maps?q=Charn%20Issara%20Tower%201&t=&z=13&ie=UTF8&iwloc=&output=embed"
