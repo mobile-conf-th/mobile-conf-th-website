@@ -253,35 +253,43 @@ const Background = styled(({ className, children }) => (
   background-size: cover;
 `;
 
-const Header = () => (
-  <div id="home">
-    <Nav />
-    <Background>
-      <HeaderSection>
-        <Container css={headerContentContainer}>
-          <HeaderContent>
-            <SubTitle>WELCOME TO</SubTitle>
-            <Title>MOBILE CONF</Title>
-            <Title css={green}>2019</Title>
-          </HeaderContent>
-          <ActionGroup>
-            <Button>BUY TICKET</Button>
-            <ButtonTransparent>MORE INFO</ButtonTransparent>
-          </ActionGroup>
-        </Container>
-      </HeaderSection>
-    </Background>
+const Header = () => {
+  const sectionRef = React.createRef();
+  return (
     <div
+      id="home"
       css={css`
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 220px;
+        position: relative;
       `}
     >
-      <Countdown />
+      <Nav />
+      <Background>
+        <HeaderSection ref={sectionRef}>
+          <Container css={headerContentContainer}>
+            <HeaderContent>
+              <SubTitle>WELCOME TO</SubTitle>
+              <Title>MOBILE CONF</Title>
+              <Title css={green}>2019</Title>
+            </HeaderContent>
+            <ActionGroup>
+              <Button>BUY TICKET</Button>
+              <ButtonTransparent>MORE INFO</ButtonTransparent>
+            </ActionGroup>
+          </Container>
+        </HeaderSection>
+      </Background>
+      <div
+        css={css`
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -50px;
+        `}
+      >
+        <Countdown />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Header;
