@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import GenSection from '../components/gen-section'
-import { color, onMobile } from '../components/common'
-import { css } from '@emotion/core'
-import styled from '@emotion/styled'
+import React, { useState } from "react";
+import GenSection from "../components/gen-section";
+import { color, onMobile } from "../components/common";
+import { css } from "@emotion/core";
+import styled from "@emotion/styled";
 
 const headerStyle = css`
   background-color: ${color.green};
@@ -14,13 +14,13 @@ const headerStyle = css`
   align-items: center;
   justify-content: center;
   padding: 0 1.5rem;
-`
+`;
 
 const SessionList = styled.div`
   display: grid;
   grid-template-columns: 7.8125rem auto;
   grid-column: span 2;
-`
+`;
 
 const tableGridStyle = css`
   display: grid;
@@ -29,14 +29,14 @@ const tableGridStyle = css`
   ${onMobile} {
     grid-template-columns: 7rem auto 5rem;
   }
-`
+`;
 
 const Time = styled.div`
   background-color: rgba(124, 124, 124, 0.1);
   width: 7.8125rem;
   color: ${color.darkGray};
   padding: 0.625rem;
-`
+`;
 
 const MainHall = () => (
   <div
@@ -50,7 +50,7 @@ const MainHall = () => (
   >
     Main Hall
   </div>
-)
+);
 const Session = ({ title, speaker }) => (
   <div
     css={css`
@@ -77,7 +77,7 @@ const Session = ({ title, speaker }) => (
       {speaker}
     </div>
   </div>
-)
+);
 
 const FirstHalf = () => (
   <div
@@ -85,7 +85,7 @@ const FirstHalf = () => (
       tableGridStyle,
       css`
         grid-template-rows: 3.25rem auto 3.25rem;
-      `,
+      `
     ]}
   >
     <div
@@ -93,7 +93,7 @@ const FirstHalf = () => (
         headerStyle,
         css`
           width: 7.8125rem;
-        `,
+        `
       ]}
     >
       Time
@@ -103,7 +103,7 @@ const FirstHalf = () => (
         headerStyle,
         css`
           justify-content: flex-start;
-        `,
+        `
       ]}
     >
       Sessions
@@ -138,7 +138,7 @@ const FirstHalf = () => (
       Lunch break for 80 mins
     </div>
   </div>
-)
+);
 
 const tabStyleFor = (hall, expected) => [
   css`
@@ -152,15 +152,15 @@ const tabStyleFor = (hall, expected) => [
       position: relative;
 
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         width: 98%;
         height: 0.07rem;
         background-color: white;
         bottom: 0;
       }
-    `,
-]
+    `
+];
 
 const Hall1Sesssions = () => (
   <SessionList>
@@ -176,7 +176,7 @@ const Hall1Sesssions = () => (
       speaker="Max Panasenkov, iOS developer at Adoda"
     />
   </SessionList>
-)
+);
 const Hall2Sesssions = () => (
   <SessionList>
     <Time>8:30 am</Time>
@@ -197,10 +197,10 @@ const Hall2Sesssions = () => (
       speaker="Prathan Phongthiproek, iOS developer at Adoda"
     />
   </SessionList>
-)
+);
 
 const SecondHalf = () => {
-  const [hall, setHall] = useState(1)
+  const [hall, setHall] = useState(1);
 
   return (
     <>
@@ -237,7 +237,7 @@ const SecondHalf = () => {
             * {
               background-color: ${color.green};
             }
-          `,
+          `
         ]}
       >
         {hall === 1 ? <Hall1Sesssions /> : <Hall2Sesssions />}
@@ -261,13 +261,13 @@ const SecondHalf = () => {
         <MainHall />
       </div>
     </>
-  )
-}
+  );
+};
 const Schedule = () => (
   <GenSection id="schedule" title="EVENT SCHEDULE">
     <FirstHalf />
     <SecondHalf />
   </GenSection>
-)
+);
 
-export default Schedule
+export default Schedule;

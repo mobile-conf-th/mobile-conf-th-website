@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import { Container, color, onSmallMobile } from './common'
-import { css } from '@emotion/core'
+import React, { useState, useEffect } from "react";
+import { Container, color, onSmallMobile } from "./common";
+import { css } from "@emotion/core";
 import {
   differenceInDays,
   differenceInHours,
   differenceInMinutes,
   differenceInSeconds,
-  parseISO,
-} from 'date-fns'
+  parseISO
+} from "date-fns";
 
 const countdownContainer = css`
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 const Box = ({ num, unit }) => (
   <div
@@ -49,42 +49,42 @@ const Box = ({ num, unit }) => (
       {unit}
     </div>
   </div>
-)
+);
 
 const remainingTimeUntil = (now, target) => {
-  const days = differenceInDays(target, now)
-  const hours = differenceInHours(target, now)
-  const minutes = differenceInMinutes(target, now)
-  const seconds = differenceInSeconds(target, now)
+  const days = differenceInDays(target, now);
+  const hours = differenceInHours(target, now);
+  const minutes = differenceInMinutes(target, now);
+  const seconds = differenceInSeconds(target, now);
 
   if (seconds <= 0) {
     return {
       days: 0,
       hours: 0,
       minutes: 0,
-      seconds: 0,
-    }
+      seconds: 0
+    };
   }
 
   return {
     days,
     hours: hours - days * 24,
     minutes: minutes - hours * 60,
-    seconds: seconds - minutes * 60,
-  }
-}
+    seconds: seconds - minutes * 60
+  };
+};
 
 const getRemainingTime = () =>
-  remainingTimeUntil(new Date(), parseISO('2019-08-20T08:30:30+07:00'))
+  remainingTimeUntil(new Date(), parseISO("2019-08-20T08:30:30+07:00"));
 
 export const Countdown = () => {
-  const [remainingTime, setRemainingTime] = useState(getRemainingTime())
+  const [remainingTime, setRemainingTime] = useState(getRemainingTime());
 
   useEffect(() => {
     setInterval(() => {
-      setRemainingTime(getRemainingTime())
-    }, 1000)
-  }, [])
+      setRemainingTime(getRemainingTime());
+    }, 1000);
+  }, []);
 
   return (
     <Container css={countdownContainer}>
@@ -116,5 +116,5 @@ export const Countdown = () => {
         <Box num={remainingTime.seconds} unit="SECONDS" />
       </div>
     </Container>
-  )
-}
+  );
+};

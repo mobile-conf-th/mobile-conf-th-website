@@ -1,16 +1,16 @@
-import React from 'react'
-import { color } from '../components/common'
-import GenSection from '../components/gen-section'
+import React from "react";
+import { color } from "../components/common";
+import GenSection from "../components/gen-section";
 
-import styled from '@emotion/styled'
-import { StaticQuery, graphql } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
-import Img from 'gatsby-image'
-import { css } from '@emotion/core'
+import styled from "@emotion/styled";
+import { StaticQuery, graphql } from "gatsby";
+import BackgroundImage from "gatsby-background-image";
+import Img from "gatsby-image";
+import { css } from "@emotion/core";
 
 const ImgContainer = styled.div`
   margin: 0.75rem 1rem;
-`
+`;
 const OurSponsors = styled(() => (
   <StaticQuery
     query={graphql`
@@ -153,6 +153,6 @@ const OurSponsors = styled(() => (
   width: 100%;
   background-position: bottom center;
   background-size: cover;
-`
+`;
 
-export default OurSponsors
+export default OurSponsors;

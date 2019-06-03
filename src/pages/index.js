@@ -1,14 +1,14 @@
-import React from 'react'
-import { Global, css } from '@emotion/core'
-import { onMobile, onSmallMobile } from '../components/common'
-import SEO from '../components/seo'
-import Layout from '../components/layout'
-import Header from '../sections/header'
-import AboutUs from '../sections/about-us'
-import Schedule from '../sections/schedule'
-import OurSpeakers from '../sections/our-speakers'
-import Location from '../sections/location'
-import OurSponsors from '../sections/sponsors'
+import React from "react";
+import { Global, css } from "@emotion/core";
+import { onMobile, onSmallMobile } from "../components/common";
+import SEO from "../components/seo";
+import Layout from "../components/layout";
+import Header from "../sections/header";
+import AboutUs from "../sections/about-us";
+import Schedule from "../sections/schedule";
+import OurSpeakers from "../sections/our-speakers";
+import Location from "../sections/location";
+import OurSponsors from "../sections/sponsors";
 
 const IndexPage = () => (
   <Layout>
@@ -37,6 +37,6 @@ const IndexPage = () => (
     <OurSponsors />
     <Location />
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;

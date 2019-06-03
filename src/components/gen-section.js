@@ -1,7 +1,7 @@
-import React from 'react'
-import { Container, color as c } from '../components/common'
-import { css } from '@emotion/core'
-import styled from '@emotion/styled'
+import React from "react";
+import { Container, color as c } from "../components/common";
+import { css } from "@emotion/core";
+import styled from "@emotion/styled";
 
 const sectionContainer = css`
   margin: auto;
@@ -10,11 +10,11 @@ const sectionContainer = css`
   align-items: center;
   padding: 6.25rem 1.5rem;
   width: 100%;
-`
+`;
 
 const H2 = styled.h2`
   font-size: 1.875rem;
-`
+`;
 
 const Line = styled.hr`
   color: ${c.green};
@@ -23,22 +23,22 @@ const Line = styled.hr`
   background-color: ${c.green};
   border-radius: 0.125rem;
   margin: 1.875rem 0;
-`
+`;
 
 const Section = styled.section`
   width: 100%;
-`
+`;
 
 const GenSection = ({ title, children, color, textColor, id, customCss }) => (
   <Section
     id={id}
     css={[
       css`
-        background-color: ${color || 'white'};
+        background-color: ${color || "white"};
         color: ${textColor || c.darkGray};
         width: 100%;
       `,
-      customCss,
+      customCss
     ]}
   >
     <Container css={[sectionContainer]}>
@@ -55,6 +55,6 @@ const GenSection = ({ title, children, color, textColor, id, customCss }) => (
       </div>
     </Container>
   </Section>
-)
+);
 
-export default GenSection
+export default GenSection;
