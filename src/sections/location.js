@@ -1,27 +1,39 @@
 import React from "react";
 import { css } from "@emotion/core";
 import GenSection from "../components/gen-section";
+import { onMobile } from "../components/common";
 
 const Location = () => (
   <GenSection id="location" title="LOCATION">
-    <h4
+    <div
       css={css`
-        font-size: 1.25rem;
-        font-weight: 600;
-        padding: 0.9375rem;
+        padding: 0 4rem 3rem;
       `}
     >
-      Charn Issara Tower 1
-    </h4>
-    <p>
-      942 Rama 4 road, Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha
-      Nakhon 10500
-    </p>
+      <h4
+        css={css`
+          font-size: 1.25rem;
+          font-weight: 600;
+          padding: 0.9375rem;
+        `}
+      >
+        Charn Issara Tower 1
+      </h4>
+      <p>
+        942 Rama 4 road, Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha
+        Nakhon 10500
+      </p>
+    </div>
     <div
       css={css`
         position: relative;
         overflow: hidden;
         padding-top: 56.25%;
+
+        ${onMobile} {
+          padding-top: 100%;
+          margin: 0 -1.5rem -6.25rem;
+        }
 
         iframe {
           position: absolute;
