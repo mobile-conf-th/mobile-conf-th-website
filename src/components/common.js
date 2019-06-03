@@ -12,6 +12,6 @@ export const color = {
 };
 
 export const Container = styled.div`
-  max-width: 1000px;
+  max-width: 1024px;
   padding: 0 24px;
 `;
