@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { color, onTablet, Container } from "../components/common";
+import { color, onTablet, Container, onDesktop } from "../components/common";
 import { Logo } from "../components/logo";
 import { Countdown } from "../components/countdown";
 import { Global, css } from "@emotion/core";
 import styled from "@emotion/styled";
 import { Link } from "react-scroll";
+import { Hamburger } from "../components/hamburger";
 
 import { StaticQuery, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
@@ -81,6 +82,17 @@ const Nav = () => {
         `}
       >
         <Logo />
+        <Hamburger
+          css={css`
+            ${onTablet} {
+              display: inline-block;
+            }
+
+            ${onDesktop} {
+              display: none;
+            }
+          `}
+        />
         <div
           css={css`
             a {
@@ -196,6 +208,7 @@ const headerContentContainer = css`
   color: white;
   margin-top: 6.875rem;
   margin: auto;
+  padding: 0;
 `;
 
 const HeaderContent = styled.div`

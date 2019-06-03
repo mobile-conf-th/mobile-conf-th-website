@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, color } from "./common";
+import { Container, color, onSmallMobile } from "./common";
 import { css } from "@emotion/core";
 import {
   differenceInDays,
