@@ -9,29 +9,29 @@ const headerStyle = css`
   color: white;
 
   font-weight: 600;
-  height: 52px;
+  height: 3.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 24px;
+  padding: 0 1.5rem;
 `;
 
 const SessionList = styled.div`
   display: grid;
-  grid-template-columns: 125px auto;
+  grid-template-columns: 7.8125rem auto;
   grid-column: span 2;
 `;
 
 const tableGridStyle = css`
   display: grid;
-  grid-template-columns: 125px auto 175px;
+  grid-template-columns: 7.8125rem auto 10.9375rem;
 `;
 
 const Time = styled.div`
   background-color: rgba(124, 124, 124, 0.1);
-  width: 125px;
+  width: 7.8125rem;
   color: ${color.darkGray};
-  padding: 10px;
+  padding: 0.625rem;
 `;
 
 const MainHall = () => (
@@ -50,7 +50,7 @@ const Session = ({ title, speaker }) => (
   <div
     css={css`
       display: flex;
-      padding: 10px 24px;
+      padding: 0.625rem 1.5rem;
       justify-content: flex-start;
       text-align: left;
       flex-direction: column;
@@ -65,7 +65,7 @@ const Session = ({ title, speaker }) => (
     </div>
     <div
       css={css`
-        font-size: 12px;
+        font-size: 0.75rem;
         color: ${color.darkGray};
       `}
     >
@@ -79,7 +79,7 @@ const FirstHalf = () => (
     css={[
       tableGridStyle,
       css`
-        grid-template-rows: 52px auto 52px;
+        grid-template-rows: 3.25rem auto 3.25rem;
       `
     ]}
   >
@@ -87,7 +87,7 @@ const FirstHalf = () => (
       css={[
         headerStyle,
         css`
-          width: 125px;
+          width: 7.8125rem;
         `
       ]}
     >
@@ -199,7 +199,7 @@ const SecondHalf = () => {
             align-items: center;
             justify-content: center;
             vertical-align: middle;
-            height: 52px;
+            height: 3.25rem;
             width: 50%;
             font-weight: 600;
             transition: background-color 0.4s ease;

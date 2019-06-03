@@ -12,6 +12,9 @@ export const color = {
 };
 
 export const Container = styled.div`
-  max-width: 1024px;
-  padding: 0 24px;
+  max-width: 64rem;
+  padding: 0 1.5rem;
 `;
+
+export const onMobile = `@media (max-width: 47.9375rem)`;
+export const onTablet = `@media (max-width: 63.9375rem)`;

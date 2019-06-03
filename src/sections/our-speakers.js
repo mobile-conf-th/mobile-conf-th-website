@@ -11,13 +11,13 @@ const Speaker = ({ img, name, title, topic, time, room }) => {
   return (
     <div
       css={css`
-        margin: 12px 0;
+        margin: 0.75rem 0;
       `}
     >
       <div
         css={css`
           position: relative;
-          margin: 10px;
+          margin: 0.625rem;
 
           div:hover {
             opacity: 0.9;
@@ -52,10 +52,10 @@ const Speaker = ({ img, name, title, topic, time, room }) => {
         >
           <span
             css={css`
-              font-size: 13.5px;
+              font-size: 13.0.3125rem;
               font-weight: normal;
               font-style: italic;
-              padding: 5px;
+              padding: 0.3125rem;
               display: block;
             `}
           >
@@ -63,10 +63,10 @@ const Speaker = ({ img, name, title, topic, time, room }) => {
           </span>
           <span
             css={css`
-              font-size: 20px;
+              font-size: 1.25rem;
               font-weight: normal;
               display: block;
-              padding: 5px;
+              padding: 0.3125rem;
             `}
           >
             {topic}
@@ -74,25 +74,25 @@ const Speaker = ({ img, name, title, topic, time, room }) => {
           <div
             css={css`
               background-color: #f1f2f2;
-              width: 56px;
-              height: 3px;
-              margin: 10px;
+              width: 3.5rem;
+              height: 0.1875rem;
+              margin: 0.625rem;
             `}
           />
           <span
             css={css`
-              font-size: 16.5px;
+              font-size: 16.0.3125rem;
               display: block;
-              padding-top: 5px;
+              padding-top: 0.3125rem;
             `}
           >
             {time}
           </span>
           <span
             css={css`
-              font-size: 16.5px;
+              font-size: 16.0.3125rem;
               display: block;
-              padding-bottom: 5px;
+              padding-bottom: 0.3125rem;
             `}
           >
             {room}

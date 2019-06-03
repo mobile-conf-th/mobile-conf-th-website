@@ -101,7 +101,7 @@ const OurSponsors = styled(() => (
               display: flex;
               align-items: center;
               justify-content: space-around;
-              padding: 12px 0;
+              padding: 0.75rem 0;
             `}
           >
             <Img fixed={data.agoda.childImageSharp.fixed} />
@@ -114,7 +114,7 @@ const OurSponsors = styled(() => (
               display: flex;
               align-items: center;
               justify-content: space-around;
-              padding: 12px 0;
+              padding: 0.75rem 0;
             `}
           >
             <Img fixed={data.thaiProgrammer.childImageSharp.fixed} />

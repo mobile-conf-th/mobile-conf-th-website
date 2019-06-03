@@ -6,9 +6,9 @@ const Location = () => (
   <GenSection id="location" title="LOCATION">
     <h4
       css={css`
-        font-size: 20px;
+        font-size: 1.25rem;
         font-weight: 600;
-        padding: 15px;
+        padding: 0.9375rem;
       `}
     >
       Charn Issara Tower 1

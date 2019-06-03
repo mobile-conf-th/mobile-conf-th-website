@@ -10,7 +10,7 @@ const AboutUs = () => (
     color={color.blue}
     textColor="white"
     customCss={css`
-      padding-top: 30px;
+      padding-top: 1.875rem;
     `}
   >
     <p>
