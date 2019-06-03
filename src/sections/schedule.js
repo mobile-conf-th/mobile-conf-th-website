@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import GenSection from '../components/gen-section'
-import { color, onMobile } from '../components/common'
-import { css } from '@emotion/core'
-import styled from '@emotion/styled'
-import data from '../data/sessions.json'
+import React, { useState } from "react";
+import GenSection from "../components/gen-section";
+import { color, onMobile } from "../components/common";
+import { css } from "@emotion/core";
+import styled from "@emotion/styled";
+import data from "../data/sessions.json";
 
 const headerStyle = css`
   background-color: ${color.green};
@@ -15,13 +15,13 @@ const headerStyle = css`
   align-items: center;
   justify-content: center;
   padding: 0 1.5rem;
-`
+`;
 
 const SessionList = styled.div`
   display: grid;
   grid-template-columns: 7.8125rem auto;
   grid-column: span 2;
-`
+`;
 
 const tableGridStyle = css`
   display: grid;
@@ -30,20 +30,20 @@ const tableGridStyle = css`
   ${onMobile} {
     grid-template-columns: 7rem auto 5rem;
   }
-`
+`;
 
 const Time = styled.div`
   background-color: rgba(124, 124, 124, 0.1);
   width: 7.8125rem;
   color: ${color.darkGray};
   padding: 0.625rem;
-`
+`;
 
 function buildSession(data) {
   return data.map(session => [
     <Time>{session.time}</Time>,
     <Session title={session.title} speaker={session.speaker} />,
-  ])
+  ]);
 }
 
 const MainHall = () => (
@@ -58,7 +58,7 @@ const MainHall = () => (
   >
     Main Hall
   </div>
-)
+);
 const Session = ({ title, speaker }) => (
   <div
     css={css`
@@ -85,7 +85,7 @@ const Session = ({ title, speaker }) => (
       {speaker}
     </div>
   </div>
-)
+);
 
 const FirstHalf = () => (
   <div
@@ -137,7 +137,7 @@ const FirstHalf = () => (
       Lunch Break: 90 mins
     </div>
   </div>
-)
+);
 
 const tabStyleFor = (hall, expected) => [
   css`
@@ -148,17 +148,17 @@ const tabStyleFor = (hall, expected) => [
       background-color: ${color.green};
       color: white;
     `,
-]
+];
 
 const Hall1Sesssions = () => (
   <SessionList>{buildSession(data.afternoon1)}</SessionList>
-)
+);
 const Hall2Sesssions = () => (
   <SessionList>{buildSession(data.afternoon2)}</SessionList>
-)
+);
 
 const SecondHalf = () => {
-  const [hall, setHall] = useState(1)
+  const [hall, setHall] = useState(1);
 
   return (
     <div>
@@ -222,13 +222,13 @@ const SecondHalf = () => {
         <MainHall />
       </div>
     </div>
-  )
-}
+  );
+};
 const Schedule = () => (
   <GenSection id="schedule" title="EVENT SCHEDULE">
     <FirstHalf />
     <SecondHalf />
   </GenSection>
-)
+);
 
-export default Schedule
+export default Schedule;
