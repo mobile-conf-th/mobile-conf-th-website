@@ -6,7 +6,7 @@ import {
   differenceInHours,
   differenceInMinutes,
   differenceInSeconds,
-  parseISO
+  parseISO,
 } from "date-fns";
 
 const countdownContainer = css`
@@ -62,7 +62,7 @@ const remainingTimeUntil = (now, target) => {
       days: 0,
       hours: 0,
       minutes: 0,
-      seconds: 0
+      seconds: 0,
     };
   }
 
@@ -70,7 +70,7 @@ const remainingTimeUntil = (now, target) => {
     days,
     hours: hours - days * 24,
     minutes: minutes - hours * 60,
-    seconds: seconds - minutes * 60
+    seconds: seconds - minutes * 60,
   };
 };
 

@@ -4,7 +4,7 @@ import {
   onTablet,
   onMobile,
   Container,
-  onDesktop
+  onDesktop,
 } from "../components/common";
 import { Logo } from "../components/logo";
 import { Countdown } from "../components/countdown";
@@ -45,7 +45,7 @@ const linkConfig = {
   smooth: true,
   offset: -100,
   activeClass: active.className,
-  css: navLink
+  css: navLink,
 };
 
 const Links = ({ close }) => (
@@ -147,7 +147,7 @@ const Nav = () => {
 
                   ${isTop ? transparentButton : greenButton}
                 `,
-                smallButton
+                smallButton,
               ]}
             >
               BUY TICKET
@@ -202,7 +202,7 @@ const Nav = () => {
                 width: 13rem;
                 height: 4rem;
                 margin-bottom: 10rem;
-              `
+              `,
             ]}
           >
             BUY TICKET

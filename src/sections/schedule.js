@@ -46,7 +46,7 @@ function buildSession(data) {
       key={session.title}
       title={session.title}
       speaker={session.speaker}
-    />
+    />,
   ]);
 }
 
@@ -97,7 +97,7 @@ const FirstHalf = () => (
       tableGridStyle,
       css`
         grid-template-rows: 3.25rem auto 3.25rem;
-      `
+      `,
     ]}
   >
     <div
@@ -105,7 +105,7 @@ const FirstHalf = () => (
         headerStyle,
         css`
           width: 7.8125rem;
-        `
+        `,
       ]}
     >
       Time
@@ -115,7 +115,7 @@ const FirstHalf = () => (
         headerStyle,
         css`
           justify-content: flex-start;
-        `
+        `,
       ]}
     >
       Sessions
@@ -134,7 +134,7 @@ const FirstHalf = () => (
           display: flex;
           justify-content: center;
           align-items: center;
-        `
+        `,
       ]}
     >
       Lunch Break: 90 mins
@@ -161,7 +161,7 @@ const tabStyleFor = (hall, expected) => [
         background-color: white;
         bottom: 0;
       }
-    `
+    `,
 ];
 
 const Hall1Sesssions = () => (
@@ -209,7 +209,7 @@ const SecondHalf = () => {
             * {
               background-color: ${color.green};
             }
-          `
+          `,
         ]}
       >
         {hall === 1 ? <Hall1Sesssions /> : <Hall2Sesssions />}
@@ -221,7 +221,7 @@ const SecondHalf = () => {
           tableGridStyle,
           css`
             grid-template-rows: 3.25rem auto;
-          `
+          `,
         ]}
       >
         <div
@@ -232,7 +232,7 @@ const SecondHalf = () => {
               display: flex;
               justify-content: center;
               align-items: center;
-            `
+            `,
           ]}
         >
           Afternoon Break: 45 mins

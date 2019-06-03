@@ -38,7 +38,7 @@ const GenSection = ({ title, children, color, textColor, id, customCss }) => (
         color: ${textColor || c.darkGray};
         width: 100%;
       `,
-      customCss
+      customCss,
     ]}
   >
     <Container css={[sectionContainer]}>
