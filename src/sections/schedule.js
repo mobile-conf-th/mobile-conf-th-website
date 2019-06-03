@@ -128,7 +128,6 @@ const FirstHalf = () => (
 
     <div
       css={[
-        headerStyle,
         css`
           grid-column: 1 / span 3;
           background-color: #e6e7e8;
@@ -219,20 +218,25 @@ const SecondHalf = () => {
 
       <div
         css={[
-          headerStyle,
+          tableGridStyle,
           css`
-            grid-column: 1 / span 3;
-            background-color: #e6e7e8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            grid-template-rows: 3.25rem auto;
           `
         ]}
       >
-        Afternoon Break: 45 mins
-      </div>
-
-      <div css={[tableGridStyle]}>
+        <div
+          css={[
+            css`
+              grid-column: 1 / span 3;
+              background-color: #e6e7e8;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            `
+          ]}
+        >
+          Afternoon Break: 45 mins
+        </div>
         <SessionList>{buildSession(data.evening)}</SessionList>
         <MainHall />
       </div>
