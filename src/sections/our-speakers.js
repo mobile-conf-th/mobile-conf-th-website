@@ -35,6 +35,7 @@ const Speaker = ({ img, name, title, topic, time, room }) => {
             right: 0;
             bottom: 0;
             left: 0;
+            padding: 1rem;
             ${isShowTopic
               ? `opacity: 0.9;`
               : `
@@ -52,7 +53,7 @@ const Speaker = ({ img, name, title, topic, time, room }) => {
         >
           <span
             css={css`
-              font-size: 13.0.3125rem;
+              font-size: 1.25rem;
               font-weight: normal;
               font-style: italic;
               padding: 0.3125rem;
@@ -81,7 +82,7 @@ const Speaker = ({ img, name, title, topic, time, room }) => {
           />
           <span
             css={css`
-              font-size: 16.0.3125rem;
+              font-size: 1.25rem;
               display: block;
               padding-top: 0.3125rem;
             `}
@@ -90,7 +91,7 @@ const Speaker = ({ img, name, title, topic, time, room }) => {
           </span>
           <span
             css={css`
-              font-size: 16.0.3125rem;
+              font-size: 1.25rem;
               display: block;
               padding-bottom: 0.3125rem;
             `}
