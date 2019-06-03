@@ -131,7 +131,7 @@ const FirstHalf = () => (
           display: flex;
           justify-content: center;
           align-items: center;
-        `
+        `,
       ]}
     >
       Lunch Break: 90 mins
@@ -167,7 +167,6 @@ const SecondHalf = () => {
           display: flex;
           justify-content: space-around;
           align-items: center;
-          grid-template-rows: 3.25rem auto 3.25rem;
 
           div {
             display: flex;
