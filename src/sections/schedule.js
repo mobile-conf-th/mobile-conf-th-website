@@ -143,11 +143,22 @@ const FirstHalf = () => (
 const tabStyleFor = (hall, expected) => [
   css`
     color: ${color.green};
+    border: solid ${color.green} 0.1rem;
   `,
   hall === expected &&
     css`
       background-color: ${color.green};
       color: white;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 98%;
+        height: 0.07rem;
+        background-color: white;
+        bottom: 0;
+      }
     `
 ];
 
