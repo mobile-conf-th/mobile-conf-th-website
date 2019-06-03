@@ -135,7 +135,11 @@ const Nav = () => {
         >
           <Global styles={active} />
           <Links />
-          <a href="http://www.eventpop.me" target="_blank">
+          <a
+            href="http://www.eventpop.me"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button
               css={[
                 css`
@@ -186,7 +190,11 @@ const Nav = () => {
           `}
         />
         <Links close={() => setOpen(false)} />
-        <a href="http://www.eventpop.me" target="_blank">
+        <a
+          href="http://www.eventpop.me"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <button
             css={[
               css`
@@ -372,11 +380,15 @@ const Header = () => {
                   font-size: 1.5rem;
                 `}
               >
-                20 AUGUST 2019
+                24 AUGUST 2019
               </div>
             </HeaderContent>
             <ActionGroup>
-              <a href="http://www.eventpop.me" target="_blank">
+              <a
+                href="http://www.eventpop.me"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button>BUY TICKET</Button>
               </a>
 

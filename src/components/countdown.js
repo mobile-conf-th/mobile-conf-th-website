@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, color, onSmallMobile } from "./common";
+import { Container, color } from "./common";
 import { css } from "@emotion/core";
 import {
   differenceInDays,
@@ -75,7 +75,7 @@ const remainingTimeUntil = (now, target) => {
 };
 
 const getRemainingTime = () =>
-  remainingTimeUntil(new Date(), parseISO("2019-08-20T08:30:30+07:00"));
+  remainingTimeUntil(new Date(), parseISO("2019-08-24T08:30:30+07:00"));
 
 export const Countdown = () => {
   const [remainingTime, setRemainingTime] = useState(getRemainingTime());

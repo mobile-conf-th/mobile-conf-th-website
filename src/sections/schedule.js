@@ -3,6 +3,7 @@ import GenSection from "../components/gen-section";
 import { color, onMobile } from "../components/common";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
+import data from "../data/sessions.json";
 
 const headerStyle = css`
   background-color: ${color.green};
@@ -37,6 +38,17 @@ const Time = styled.div`
   color: ${color.darkGray};
   padding: 0.625rem;
 `;
+
+function buildSession(data) {
+  return data.map(session => [
+    <Time key={session.time}>{session.time}</Time>,
+    <Session
+      key={session.title}
+      title={session.title}
+      speaker={session.speaker}
+    />
+  ]);
+}
 
 const MainHall = () => (
   <div
@@ -110,32 +122,23 @@ const FirstHalf = () => (
     </div>
     <div css={headerStyle}>Venue</div>
 
-    <SessionList>
-      <Time>8:30 am</Time>
-      <Session title="Registration" />
-
-      <Time>9:30 am</Time>
-      <Session title="Opening Remark" speaker="Organizer & Gosoft" />
-
-      <Time>10:30 am</Time>
-      <Session
-        title="Automating at scale:Challenges and (some) solutions"
-        speaker="Max Panasenkov, iOS developer at Adoda"
-      />
-    </SessionList>
+    <SessionList>{buildSession(data.morning)}</SessionList>
 
     <MainHall />
 
     <div
-      css={css`
-        grid-column: 1 / span 3;
-        background-color: #e6e7e8;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      `}
+      css={[
+        headerStyle,
+        css`
+          grid-column: 1 / span 3;
+          background-color: #e6e7e8;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        `
+      ]}
     >
-      Lunch break for 80 mins
+      Lunch Break: 90 mins
     </div>
   </div>
 );
@@ -163,47 +166,17 @@ const tabStyleFor = (hall, expected) => [
 ];
 
 const Hall1Sesssions = () => (
-  <SessionList>
-    <Time>8:30 am</Time>
-    <Session title="Registration" />
-
-    <Time>9:30 am</Time>
-    <Session title="Opening Remark" speaker="Organizer & Gosoft" />
-
-    <Time>10:30 am</Time>
-    <Session
-      title="Automating at scale:Challenges and (some) solutions"
-      speaker="Max Panasenkov, iOS developer at Adoda"
-    />
-  </SessionList>
+  <SessionList>{buildSession(data.afternoon1)}</SessionList>
 );
 const Hall2Sesssions = () => (
-  <SessionList>
-    <Time>8:30 am</Time>
-    <Session
-      title="Mobile app hacking in a nutshell"
-      speaker="Prathan Phongthiproek, iOS developer at Adoda"
-    />
-
-    <Time>9:30 am</Time>
-    <Session
-      title="Going react native without breaking"
-      speaker="Leomid Olevsky, iOS developer at Adoda"
-    />
-
-    <Time>10:30 am</Time>
-    <Session
-      title="Mobile app hacking in a nutshell"
-      speaker="Prathan Phongthiproek, iOS developer at Adoda"
-    />
-  </SessionList>
+  <SessionList>{buildSession(data.afternoon2)}</SessionList>
 );
 
 const SecondHalf = () => {
   const [hall, setHall] = useState(1);
 
   return (
-    <>
+    <div>
       <div
         css={css`
           display: flex;
@@ -244,23 +217,26 @@ const SecondHalf = () => {
         <div />
       </div>
 
+      <div
+        css={[
+          headerStyle,
+          css`
+            grid-column: 1 / span 3;
+            background-color: #e6e7e8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          `
+        ]}
+      >
+        Afternoon Break: 45 mins
+      </div>
+
       <div css={[tableGridStyle]}>
-        <SessionList>
-          <Time>8:30 am</Time>
-          <Session title="Registration" />
-
-          <Time>9:30 am</Time>
-          <Session title="Opening Remark" speaker="Organizer & Gosoft" />
-
-          <Time>10:30 am</Time>
-          <Session
-            title="Automating at scale:Challenges and (some) solutions"
-            speaker="Max Panasenkov, iOS developer at Adoda"
-          />
-        </SessionList>
+        <SessionList>{buildSession(data.evening)}</SessionList>
         <MainHall />
       </div>
-    </>
+    </div>
   );
 };
 const Schedule = () => (
