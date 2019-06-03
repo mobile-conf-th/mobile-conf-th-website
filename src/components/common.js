@@ -16,5 +16,5 @@ export const Container = styled.div`
   padding: 0 1.5rem;
 `;
 
-export const onMobile = `@media (max-width: 47.9375rem)`;
-export const onTablet = `@media (max-width: 63.9375rem)`;
+export const onMobile = `@media (max-width: 767px)`;
+export const onTablet = `@media (max-width: 1023px)`;
