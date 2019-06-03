@@ -4,11 +4,11 @@ import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 
 function SEO({ description, lang, meta, keywords }) {
-  const title = data.site.siteMetadata.title;
   return (
     <StaticQuery
       query={detailsQuery}
       render={data => {
+        const title = data.site.siteMetadata.title;
         const metaDescription =
           description || data.site.siteMetadata.description;
         return (
