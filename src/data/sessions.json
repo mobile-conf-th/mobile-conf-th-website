@@ -1,0 +1,90 @@
+{
+  "morning": [
+    {
+      "time": "8:30 am",
+      "title": "Registration",
+      "speaker": null
+    },
+    {
+      "time": "9:30 am",
+      "title": "Opening Remark",
+      "speaker": "Organizer & Gosoft"
+    },
+    {
+      "time": "9:45 am",
+      "title": "Regular Session 1",
+      "speaker": null
+    },
+    {
+      "time": "10:30 am",
+      "title": "Regular Session 2",
+      "speaker": null
+    },
+    {
+      "time": "11:10 am",
+      "title": "Regular Session 3",
+      "speaker": null
+    }
+  ],
+  "afternoon1": [
+    {
+      "time": "13:30 pm",
+      "title": "Android Afternoon session 1",
+      "speaker": null
+    },
+    {
+      "time": "14:00 pm",
+      "title": "Android Afternoon session 2",
+      "speaker": "Organizer"
+    },
+    {
+      "time": "14:30 pm",
+      "title": "Android Afternoon session 3",
+      "speaker": "Someone Famous from Some Famous Company"
+    },
+    {
+      "time": "15:00 pm",
+      "title": "Android Afternoon session 4",
+      "speaker": null
+    }
+  ],
+  "afternoon2": [
+    {
+      "time": "13:30 pm",
+      "title": "iOS Afternoon session 1",
+      "speaker": null
+    },
+    {
+      "time": "14:00 pm",
+      "title": "iOS Afternoon session 2",
+      "speaker": "Organizer"
+    },
+    {
+      "time": "14:30 pm",
+      "title": "iOS Afternoon session 3",
+      "speaker": "Someone Famous from Some Famous Company"
+    },
+    {
+      "time": "15:00 pm",
+      "title": "iOS Afternoon session 4",
+      "speaker": null
+    }
+  ],
+  "evening": [
+    {
+      "time": "16:15 pm",
+      "title": "Regular Session 4",
+      "speaker": "TBA"
+    },
+    {
+      "time": "16:55 pm",
+      "title": "Closing Remark",
+      "speaker": "Someone Famous"
+    },
+    {
+      "time": "17:30 pm",
+      "title": "After Party",
+      "speaker": "All participants"
+    }
+  ]
+}
