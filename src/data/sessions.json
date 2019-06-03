@@ -8,66 +8,66 @@
     {
       "time": "9:30 am",
       "title": "Opening Remark",
-      "speaker": "Organizer & Gosoft"
+      "speaker": "Organizers"
     },
     {
       "time": "9:45 am",
       "title": "Regular Session 1",
-      "speaker": null
+      "speaker": "TBA"
     },
     {
       "time": "10:30 am",
       "title": "Regular Session 2",
-      "speaker": null
+      "speaker": "TBA"
     },
     {
       "time": "11:10 am",
       "title": "Regular Session 3",
-      "speaker": null
+      "speaker": "TBA"
     }
   ],
   "afternoon1": [
     {
       "time": "13:30 pm",
       "title": "Android Afternoon session 1",
-      "speaker": null
+      "speaker": "TBA"
     },
     {
       "time": "14:00 pm",
       "title": "Android Afternoon session 2",
-      "speaker": "Organizer"
+      "speaker": "TBA"
     },
     {
       "time": "14:30 pm",
       "title": "Android Afternoon session 3",
-      "speaker": "Someone Famous from Some Famous Company"
+      "speaker": "TBA"
     },
     {
       "time": "15:00 pm",
       "title": "Android Afternoon session 4",
-      "speaker": null
+      "speaker": "TBA"
     }
   ],
   "afternoon2": [
     {
       "time": "13:30 pm",
       "title": "iOS Afternoon session 1",
-      "speaker": null
+      "speaker": "TBA"
     },
     {
       "time": "14:00 pm",
       "title": "iOS Afternoon session 2",
-      "speaker": "Organizer"
+      "speaker": "TBA"
     },
     {
       "time": "14:30 pm",
       "title": "iOS Afternoon session 3",
-      "speaker": "Someone Famous from Some Famous Company"
+      "speaker": "TBA"
     },
     {
       "time": "15:00 pm",
       "title": "iOS Afternoon session 4",
-      "speaker": null
+      "speaker": "TBA"
     }
   ],
   "evening": [
@@ -79,12 +79,12 @@
     {
       "time": "16:55 pm",
       "title": "Closing Remark",
-      "speaker": "Someone Famous"
+      "speaker": "Organizers"
     },
     {
       "time": "17:30 pm",
       "title": "After Party",
-      "speaker": "All participants"
+      "speaker": "All attendees"
     }
   ]
 }
