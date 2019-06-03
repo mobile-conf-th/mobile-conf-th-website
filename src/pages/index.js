@@ -12,7 +12,10 @@ import OurSponsors from "../sections/sponsors";
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`mobile`, `conference`, `thai`]} />
+    <SEO
+      lang="th"
+      keywords={[`mobile`, `conference`, `conf`, `thailand`, `2019`]}
+    />
     <Global
       styles={css`
         ${onMobile} {
