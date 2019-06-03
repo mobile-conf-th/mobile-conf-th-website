@@ -71,7 +71,7 @@ const Links = ({ close }) => (
   </>
 );
 const Nav = () => {
-  const [isTop, setIsTop] = useState(window.scrollY === 0);
+  const [isTop, setIsTop] = useState(false);
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
