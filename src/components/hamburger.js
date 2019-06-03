@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
-import styled from "@emotion/styled";
-import { onDesktop } from "../components/common";
+import React, { useRef } from 'react'
+import styled from '@emotion/styled'
+import { onDesktop } from '../components/common'
 
 const SvgContainer = styled.div`
   position: relative;
@@ -50,13 +50,13 @@ const SvgContainer = styled.div`
   ${onDesktop} {
     display: none;
   }
-`;
+`
 export const Hamburger = ({ onClick, isOpen }) => {
-  const svgRef = useRef(null);
+  const svgRef = useRef(null)
   return (
     <SvgContainer onClick={onClick}>
       <svg
-        className={`ham hamRotate ham4 ${isOpen ? "active" : ""}`}
+        className={`ham hamRotate ham4 ${isOpen ? 'active' : ''}`}
         viewBox="0 0 100 100"
         ref={svgRef}
         onClick={onClick}
@@ -72,5 +72,5 @@ export const Hamburger = ({ onClick, isOpen }) => {
         />
       </svg>
     </SvgContainer>
-  );
-};
+  )
+}

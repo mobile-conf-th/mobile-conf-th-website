@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { color } from "../components/common";
-import GenSection from "../components/gen-section";
+import React, { useState } from 'react'
+import { color } from '../components/common'
+import GenSection from '../components/gen-section'
 
-import { StaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-import { css } from "@emotion/core";
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import { css } from '@emotion/core'
 
 const Speaker = ({ img, name, title, topic, time, room }) => {
-  const [isShowTopic, setShowTopic] = useState(false);
+  const [isShowTopic, setShowTopic] = useState(false)
   return (
     <div
       css={css`
@@ -116,8 +116,8 @@ const Speaker = ({ img, name, title, topic, time, room }) => {
         {title}
       </span>
     </div>
-  );
-};
+  )
+}
 const OurSpeakers = () => (
   <StaticQuery
     query={graphql`
@@ -192,6 +192,6 @@ const OurSpeakers = () => (
       </GenSection>
     )}
   />
-);
+)
 
-export default OurSpeakers;
+export default OurSpeakers

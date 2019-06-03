@@ -1,7 +1,7 @@
-import React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-import { css } from "@emotion/core";
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import { css } from '@emotion/core'
 export const Logo = () => (
   <StaticQuery
     query={graphql`
@@ -25,4 +25,4 @@ export const Logo = () => (
       </div>
     )}
   />
-);
+)

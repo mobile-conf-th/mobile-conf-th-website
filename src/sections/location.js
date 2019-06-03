@@ -1,7 +1,7 @@
-import React from "react";
-import { css } from "@emotion/core";
-import GenSection from "../components/gen-section";
-import { onMobile } from "../components/common";
+import React from 'react'
+import { css } from '@emotion/core'
+import GenSection from '../components/gen-section'
+import { onMobile } from '../components/common'
 
 const Location = () => (
   <GenSection id="location" title="LOCATION">
@@ -57,6 +57,6 @@ const Location = () => (
       />
     </div>
   </GenSection>
-);
+)
 
-export default Location;
+export default Location

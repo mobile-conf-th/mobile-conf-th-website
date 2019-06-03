@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react'
 import {
   color,
   onTablet,
   onMobile,
   Container,
-  onDesktop
-} from "../components/common";
-import { Logo } from "../components/logo";
-import { Countdown } from "../components/countdown";
-import { Global, css } from "@emotion/core";
-import styled from "@emotion/styled";
-import { Link } from "react-scroll";
-import { Hamburger } from "../components/hamburger";
+  onDesktop,
+} from '../components/common'
+import { Logo } from '../components/logo'
+import { Countdown } from '../components/countdown'
+import { Global, css } from '@emotion/core'
+import styled from '@emotion/styled'
+import { Link } from 'react-scroll'
+import { Hamburger } from '../components/hamburger'
 
-import { StaticQuery, graphql } from "gatsby";
-import BackgroundImage from "gatsby-background-image";
+import { StaticQuery, graphql } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
 
 const active = css`
   .active:after {
     background-color: ${color.green} !important;
   }
-`;
+`
 
 const navLink = css`
   position: relative;
@@ -29,7 +29,7 @@ const navLink = css`
   padding-bottom: 0.625rem;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     right: 0;
@@ -38,15 +38,15 @@ const navLink = css`
     background-color: transparent;
     transition: background-color 0.4s ease;
   }
-`;
+`
 
 const linkConfig = {
   spy: true,
   smooth: true,
   offset: -100,
   activeClass: active.className,
-  css: navLink
-};
+  css: navLink,
+}
 
 const Links = ({ close }) => (
   <>
@@ -69,20 +69,20 @@ const Links = ({ close }) => (
       Location
     </Link>
   </>
-);
+)
 const Nav = () => {
-  const [isTop, setIsTop] = useState(false);
-  const [isOpen, setOpen] = useState(false);
+  const [isTop, setIsTop] = useState(false)
+  const [isOpen, setOpen] = useState(false)
 
   useEffect(() => {
     window.addEventListener(
-      "scroll",
+      'scroll',
       () => {
-        setIsTop(window.scrollY === 0);
+        setIsTop(window.scrollY === 0)
       },
       true
-    );
-  }, []);
+    )
+  }, [])
 
   return (
     <section
@@ -143,7 +143,7 @@ const Nav = () => {
 
                   ${isTop ? transparentButton : greenButton}
                 `,
-                smallButton
+                smallButton,
               ]}
             >
               BUY TICKET
@@ -162,7 +162,7 @@ const Nav = () => {
           background-color: ${color.darkGray};
           display: flex;
           opacity: ${isOpen ? 1 : 0};
-          ${isOpen ? "" : "visibility: hidden;"}
+          ${isOpen ? '' : 'visibility: hidden;'}
           flex-direction: column;
           align-items: center;
           justify-content: center;
@@ -194,7 +194,7 @@ const Nav = () => {
                 width: 13rem;
                 height: 4rem;
                 margin-bottom: 10rem;
-              `
+              `,
             ]}
           >
             BUY TICKET
@@ -202,8 +202,8 @@ const Nav = () => {
         </a>
       </div>
     </section>
-  );
-};
+  )
+}
 
 // Buttons
 
@@ -215,7 +215,7 @@ const baseButtonStyle = css`
   height: 3.125rem;
   font-weight: 600;
   transition: border, background-color 0.4s ease;
-`;
+`
 
 const greenButton = css`
   ${baseButtonStyle}
@@ -225,11 +225,11 @@ const greenButton = css`
   &:hover {
     background-color: ${color.lightGreen};
   }
-`;
+`
 
 const Button = styled.button`
   ${greenButton}
-`;
+`
 
 const transparentButton = css`
   ${baseButtonStyle}
@@ -240,18 +240,18 @@ const transparentButton = css`
     color: ${color.darkGray};
     background-color: white;
   }
-`;
+`
 
 const ButtonTransparent = styled.button`
   ${transparentButton}
-`;
+`
 
 const smallButton = css`
   font-size: 1rem;
   width: 9.375rem;
   height: 2.5rem;
   line-height: 1.1;
-`;
+`
 // Header css
 
 const HeaderSection = styled.section`
@@ -262,19 +262,19 @@ const HeaderSection = styled.section`
   ${onTablet} {
     height: 53.75rem;
   }
-`;
+`
 
 const headerContentContainer = css`
   color: white;
   margin-top: 8rem;
   margin: auto;
   padding: 0;
-`;
+`
 
 const HeaderContent = styled.div`
   margin: 0 auto;
   text-align: center;
-`;
+`
 
 const ActionGroup = styled.div`
   display: flex;
@@ -285,7 +285,7 @@ const ActionGroup = styled.div`
   ${Button}, ${ButtonTransparent} {
     margin: 0 1.0625rem;
   }
-`;
+`
 
 const SubTitle = styled.h2`
   line-height: 1;
@@ -296,18 +296,18 @@ const SubTitle = styled.h2`
   ${onMobile} {
     font-size: 2rem;
   }
-`;
+`
 
 const Title = styled.h1`
   line-height: 1;
   font-size: 5.25rem;
   font-weight: 700;
   margin-bottom: 0.3125rem;
-`;
+`
 
 const green = css`
   color: ${color.green};
-`;
+`
 
 const Background = styled(({ className, children }) => (
   <StaticQuery
@@ -337,10 +337,10 @@ const Background = styled(({ className, children }) => (
   width: 100%;
   background-position: bottom center;
   background-size: cover;
-`;
+`
 
 const Header = () => {
-  const sectionRef = React.createRef();
+  const sectionRef = React.createRef()
   return (
     <div
       id="home"
@@ -398,7 +398,7 @@ const Header = () => {
         <Countdown />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

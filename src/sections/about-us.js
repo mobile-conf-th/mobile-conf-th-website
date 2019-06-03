@@ -1,7 +1,7 @@
-import React from "react";
-import GenSection from "../components/gen-section";
-import { color } from "../components/common";
-import { css } from "@emotion/core";
+import React from 'react'
+import GenSection from '../components/gen-section'
+import { color } from '../components/common'
+import { css } from '@emotion/core'
 
 const AboutUs = () => (
   <GenSection
@@ -27,6 +27,6 @@ const AboutUs = () => (
       year.
     </p>
   </GenSection>
-);
+)
 
-export default AboutUs;
+export default AboutUs
