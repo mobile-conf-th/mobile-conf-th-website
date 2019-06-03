@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import GenSection from "../components/gen-section";
-import { color } from "../components/common";
+import { color, onMobile } from "../components/common";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 
@@ -25,6 +25,10 @@ const SessionList = styled.div`
 const tableGridStyle = css`
   display: grid;
   grid-template-columns: 7.8125rem auto 10.9375rem;
+
+  ${onMobile} {
+    grid-template-columns: 7rem auto 5rem;
+  }
 `;
 
 const Time = styled.div`
@@ -41,6 +45,7 @@ const MainHall = () => (
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 1rem;
     `}
   >
     Main Hall
