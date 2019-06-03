@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import styled from "@emotion/styled";
+import { onDesktop } from "../components/common";
 
 const SvgContainer = styled.div`
   position: relative;
@@ -45,16 +46,20 @@ const SvgContainer = styled.div`
   .ham4.active .bottom {
     stroke-dashoffset: -68px;
   }
+
+  ${onDesktop} {
+    display: none;
+  }
 `;
-export const Hamburger = () => {
+export const Hamburger = ({ onClick, isOpen }) => {
   const svgRef = useRef(null);
   return (
-    <SvgContainer>
+    <SvgContainer onClick={onClick}>
       <svg
-        className="ham hamRotate ham4"
+        className={`ham hamRotate ham4 ${isOpen ? "active" : ""}`}
         viewBox="0 0 100 100"
         ref={svgRef}
-        onClick={() => svgRef.current.classList.toggle("active")}
+        onClick={onClick}
       >
         <path
           className="line top"

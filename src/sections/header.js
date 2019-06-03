@@ -41,8 +41,32 @@ const linkConfig = {
   activeClass: active.className,
   css: navLink
 };
+
+const Links = ({ close }) => (
+  <>
+    <Link to="home" {...linkConfig} onClick={close}>
+      Home
+    </Link>
+    <Link to="about" {...linkConfig} onClick={close}>
+      About
+    </Link>
+    <Link to="schedule" {...linkConfig} onClick={close}>
+      Schedule
+    </Link>
+    <Link to="speakers" {...linkConfig} onClick={close}>
+      Speakers
+    </Link>
+    <Link to="sponsors" {...linkConfig} onClick={close}>
+      Sponsers
+    </Link>
+    <Link to="location" {...linkConfig} onClick={close}>
+      Location
+    </Link>
+  </>
+);
 const Nav = () => {
-  const [isTop, setIsTop] = useState(true);
+  const [isTop, setIsTop] = useState(window.scrollY === 0);
+  const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
     window.addEventListener(
@@ -68,6 +92,10 @@ const Nav = () => {
           : `
           background-color: ${color.darkGray};
         `}
+
+        ${onTablet} {
+          ${isOpen ? `background-color: ${color.darkGray}` : ``}
+        }
       `}
     >
       <Container
@@ -82,17 +110,8 @@ const Nav = () => {
         `}
       >
         <Logo />
-        <Hamburger
-          css={css`
-            ${onTablet} {
-              display: inline-block;
-            }
 
-            ${onDesktop} {
-              display: none;
-            }
-          `}
-        />
+        <Hamburger onClick={() => setOpen(!isOpen)} isOpen={isOpen} />
         <div
           css={css`
             a {
@@ -107,24 +126,7 @@ const Nav = () => {
           `}
         >
           <Global styles={active} />
-          <Link to="home" {...linkConfig}>
-            Home
-          </Link>
-          <Link to="about" {...linkConfig}>
-            About
-          </Link>
-          <Link to="schedule" {...linkConfig}>
-            Schedule
-          </Link>
-          <Link to="speakers" {...linkConfig}>
-            Speakers
-          </Link>
-          <Link to="sponsors" {...linkConfig}>
-            Sponsers
-          </Link>
-          <Link to="location" {...linkConfig}>
-            Location
-          </Link>
+          <Links />
           <a href="http://www.eventpop.me" target="_blank">
             <button
               css={[
@@ -141,6 +143,56 @@ const Nav = () => {
           </a>
         </div>
       </Container>
+      <div
+        css={css`
+          ${onDesktop} {
+            display: none;
+          }
+          position: absolute;
+          width: 100%;
+          height: 100vh;
+          background-color: ${color.darkGray};
+          display: flex;
+          opacity: ${isOpen ? 1 : 0};
+          ${isOpen ? "" : "visibility: hidden;"}
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transition: visibility 0.4s ease, opacity 0.4s ease;
+          a {
+            display: flex;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            margin: 1em 0;
+          }
+        `}
+      >
+        <div
+          css={css`
+            background-color: white;
+            height: 0.1rem;
+            width: 95%;
+            position: absolute;
+            top: 0;
+          `}
+        />
+        <Links close={() => setOpen(false)} />
+        <a href="http://www.eventpop.me" target="_blank">
+          <button
+            css={[
+              css`
+                ${greenButton}
+                width: 13rem;
+                height: 4rem;
+                margin-bottom: 10rem;
+              `
+            ]}
+          >
+            BUY TICKET
+          </button>
+        </a>
+      </div>
     </section>
   );
 };
@@ -154,7 +206,7 @@ const baseButtonStyle = css`
   width: 10.9375rem;
   height: 3.125rem;
   font-weight: 600;
-  transition: border, background-color 0.4s linear;
+  transition: border, background-color 0.4s ease;
 `;
 
 const greenButton = css`
