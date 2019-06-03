@@ -113,18 +113,20 @@ const Nav = () => {
           <Link to="location" {...linkConfig}>
             Location
           </Link>
-          <button
-            css={[
-              css`
-                margin-left: 3.125rem;
+          <a href="http://www.eventpop.me" target="_blank">
+            <button
+              css={[
+                css`
+                  margin-left: 3.125rem;
 
-                ${isTop ? transparentButton : greenButton}
-              `,
-              smallButton
-            ]}
-          >
-            BUY TICKET
-          </button>
+                  ${isTop ? transparentButton : greenButton}
+                `,
+                smallButton
+              ]}
+            >
+              BUY TICKET
+            </button>
+          </a>
         </div>
       </Container>
     </section>
@@ -279,8 +281,13 @@ const Header = () => {
               <Title css={green}>2019</Title>
             </HeaderContent>
             <ActionGroup>
-              <Button>BUY TICKET</Button>
-              <ButtonTransparent>MORE INFO</ButtonTransparent>
+              <a href="http://www.eventpop.me" target="_blank">
+                <Button>BUY TICKET</Button>
+              </a>
+
+              <Link to="about" {...linkConfig}>
+                <ButtonTransparent>MORE INFO</ButtonTransparent>
+              </Link>
             </ActionGroup>
           </Container>
         </HeaderSection>
