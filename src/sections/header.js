@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { color, onTablet, Container, onDesktop } from "../components/common";
+import {
+  color,
+  onTablet,
+  onMobile,
+  Container,
+  onDesktop
+} from "../components/common";
 import { Logo } from "../components/logo";
 import { Countdown } from "../components/countdown";
 import { Global, css } from "@emotion/core";
@@ -247,18 +253,18 @@ const smallButton = css`
 // Header css
 
 const HeaderSection = styled.section`
-  height: 43.75rem;
+  height: 53.75rem;
   display: flex;
   flex-direction: column;
 
   ${onTablet} {
-    height: 50.75em;
+    height: 53.75rem;
   }
 `;
 
 const headerContentContainer = css`
   color: white;
-  margin-top: 6.875rem;
+  margin-top: 8rem;
   margin: auto;
   padding: 0;
 `;
@@ -284,6 +290,10 @@ const SubTitle = styled.h2`
   font-size: 3rem;
   font-weight: 300;
   margin-bottom: 1.25rem;
+
+  ${onMobile} {
+    font-size: 2rem;
+  }
 `;
 
 const Title = styled.h1`
@@ -344,6 +354,24 @@ const Header = () => {
               <SubTitle>WELCOME TO</SubTitle>
               <Title>MOBILE CONF</Title>
               <Title css={green}>2019</Title>
+
+              <div
+                css={css`
+                  margin: 2rem auto;
+                  width: 5rem;
+                  height: 0.2rem;
+                  border-radius: 1.5px;
+                  background-color: white;
+                `}
+              />
+              <div
+                css={css`
+                  font-weight: 500;
+                  font-size: 1.5rem;
+                `}
+              >
+                20 AUGUST 2019
+              </div>
             </HeaderContent>
             <ActionGroup>
               <a href="http://www.eventpop.me" target="_blank">
