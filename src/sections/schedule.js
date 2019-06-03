@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import GenSection from '../components/gen-section'
-import { color } from '../components/common'
+import { color, onMobile } from '../components/common'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import data from '../data/sessions.json'
@@ -10,22 +10,33 @@ const headerStyle = css`
   color: white;
 
   font-weight: 600;
-  height: 52px;
+  height: 3.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 24px;
+  padding: 0 1.5rem;
+`
+
+const SessionList = styled.div`
+  display: grid;
+  grid-template-columns: 7.8125rem auto;
+  grid-column: span 2;
 `
 
 const tableGridStyle = css`
   display: grid;
-  grid-template-columns: 125px auto 175px;
+  grid-template-columns: 7.8125rem auto 10.9375rem;
+
+  ${onMobile} {
+    grid-template-columns: 7rem auto 5rem;
+  }
 `
 
 const Time = styled.div`
   background-color: rgba(124, 124, 124, 0.1);
-  width: 125px;
-  padding: 10px;
+  width: 7.8125rem;
+  color: ${color.darkGray};
+  padding: 0.625rem;
 `
 
 function buildSession(data) {
@@ -35,11 +46,24 @@ function buildSession(data) {
   ])
 }
 
+const MainHall = () => (
+  <div
+    css={css`
+      background-color: rgba(124, 124, 124, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    `}
+  >
+    Main Hall
+  </div>
+)
 const Session = ({ title, speaker }) => (
   <div
     css={css`
       display: flex;
-      padding: 10px 24px;
+      padding: 0.625rem 1.5rem;
       justify-content: flex-start;
       text-align: left;
       flex-direction: column;
@@ -54,7 +78,8 @@ const Session = ({ title, speaker }) => (
     </div>
     <div
       css={css`
-        font-size: 12px;
+        font-size: 0.75rem;
+        color: ${color.darkGray};
       `}
     >
       {speaker}
@@ -62,12 +87,12 @@ const Session = ({ title, speaker }) => (
   </div>
 )
 
-const MorningSection = () => (
+const FirstHalf = () => (
   <div
     css={[
       tableGridStyle,
       css`
-        grid-template-rows: 52px auto 52px;
+        grid-template-rows: 3.25rem auto 3.25rem;
       `,
     ]}
   >
@@ -75,7 +100,7 @@ const MorningSection = () => (
       css={[
         headerStyle,
         css`
-          width: 125px;
+          width: 7.8125rem;
         `,
       ]}
     >
@@ -93,40 +118,46 @@ const MorningSection = () => (
     </div>
     <div css={headerStyle}>Venue</div>
 
-    <div
-      css={css`
-        display: grid;
-        grid-template-columns: 125px auto;
-        grid-column: span 2;
-      `}
-    >
-      {buildSession(data.morning)}
-    </div>
+    <SessionList>{buildSession(data.morning)}</SessionList>
+
+    <MainHall />
 
     <div
-      css={css`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      `}
-    >
-      Main Hall
-    </div>
-    <div
-      css={css`
-        grid-column: 1 / span 3;
-        background-color: ${color.gray};
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      `}
+      css={[
+        headerStyle,
+        css`
+          grid-column: 1 / span 3;
+          background-color: #e6e7e8;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        `
+      ]}
     >
       Lunch Break: 90 mins
     </div>
   </div>
 )
 
-const AfternoonSection = () => {
+const tabStyleFor = (hall, expected) => [
+  css`
+    color: ${color.green};
+  `,
+  hall === expected &&
+    css`
+      background-color: ${color.green};
+      color: white;
+    `,
+]
+
+const Hall1Sesssions = () => (
+  <SessionList>{buildSession(data.afternoon1)}</SessionList>
+)
+const Hall2Sesssions = () => (
+  <SessionList>{buildSession(data.afternoon2)}</SessionList>
+)
+
+const SecondHalf = () => {
   const [hall, setHall] = useState(1)
 
   return (
@@ -136,121 +167,68 @@ const AfternoonSection = () => {
           display: flex;
           justify-content: space-around;
           align-items: center;
+          grid-template-rows: 3.25rem auto 3.25rem;
 
           div {
             display: flex;
             align-items: center;
             justify-content: center;
             vertical-align: middle;
-            height: 52px;
+            height: 3.25rem;
             width: 50%;
             font-weight: 600;
             transition: background-color 0.4s ease;
           }
         `}
       >
-        <div
-          css={[
-            css`
-              color: ${color.green};
-            `,
-            hall === 1 &&
-              css`
-                background-color: ${color.green};
-                color: white;
-              `,
-          ]}
-          onClick={() => setHall(1)}
-        >
+        <div css={tabStyleFor(hall, 1)} onClick={() => setHall(1)}>
           Hall 1 Sessions
         </div>
-        <div
-          css={[
-            css`
-              color: ${color.green};
-            `,
-            hall === 2 &&
-              css`
-                background-color: ${color.green};
-                color: white;
-              `,
-          ]}
-          onClick={() => setHall(2)}
-        >
+        <div css={tabStyleFor(hall, 2)} onClick={() => setHall(2)}>
           Hall 2 Sessions
         </div>
       </div>
-      <div>
-        <div
-          css={css`
-            display: grid;
-            grid-template-columns: 125px auto;
-            grid-column: span 2;
-            background-color: ${color.green};
-            color: white;
-          `}
-        >
-          {hall == 1
-            ? buildSession(data.afternoon1)
-            : buildSession(data.afternoon2)}
-        </div>
-      </div>
+
       <div
         css={[
           tableGridStyle,
           css`
-            grid-template-rows: 52px auto 0px;
+            * {
+              background-color: ${color.green};
+            }
           `,
         ]}
       >
-        <div
-          css={css`
+        {hall === 1 ? <Hall1Sesssions /> : <Hall2Sesssions />}
+        <div />
+      </div>
+
+      <div
+        css={[
+          headerStyle,
+          css`
             grid-column: 1 / span 3;
-            background-color: ${color.gray};
+            background-color: #e6e7e8;
             display: flex;
             justify-content: center;
             align-items: center;
-          `}
-        >
-          Afternoon Break: 45 mins
-        </div>
+          `,
+        ]}
+      >
+        Afternoon Break: 45 mins
+      </div>
+
+      <div css={[tableGridStyle]}>
+        <SessionList>{buildSession(data.evening)}</SessionList>
+        <MainHall />
       </div>
     </div>
   )
 }
-
-const EveningSection = () => (
-  <div
-    css={[
-      tableGridStyle
-    ]}
-  >
-    <div
-      css={css`
-        display: grid;
-        grid-template-columns: 125px auto;
-        grid-column: span 2;
-      `}
-    >
-      {buildSession(data.evening)}
-    </div>
-    <div
-      css={css`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      `}
-    >
-      Main Hall
-    </div>
-  </div>
-)
-
 const Schedule = () => (
   <GenSection id="schedule" title="EVENT SCHEDULE">
-    <MorningSection />
-    <AfternoonSection />
-    <EveningSection />
+    <FirstHalf />
+    <SecondHalf />
   </GenSection>
 )
 

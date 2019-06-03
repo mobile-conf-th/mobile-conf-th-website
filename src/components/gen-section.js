@@ -8,21 +8,21 @@ const sectionContainer = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 24px;
+  padding: 6.25rem 1.5rem;
   width: 100%;
 `;
 
 const H2 = styled.h2`
-  font-size: 30px;
+  font-size: 1.875rem;
 `;
 
 const Line = styled.hr`
   color: ${c.green};
-  height: 2px;
-  width: 60px;
+  height: 0.125rem;
+  width: 3.75rem;
   background-color: ${c.green};
-  border-radius: 2px;
-  margin: 30px 0;
+  border-radius: 0.125rem;
+  margin: 1.875rem 0;
 `;
 
 const Section = styled.section`
@@ -46,7 +46,7 @@ const GenSection = ({ title, children, color, textColor, id, customCss }) => (
       <Line />
       <div
         css={css`
-          margin-top: 21px;
+          margin-top: 1.3125rem;
           text-align: center;
           width: 100%;
         `}

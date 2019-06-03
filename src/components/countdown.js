@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, color } from "./common";
+import { Container, color, onSmallMobile } from "./common";
 import { css } from "@emotion/core";
 import {
   differenceInDays,
@@ -24,25 +24,25 @@ const Box = ({ num, unit }) => (
       align-items: center;
       justify-content: center;
       background-color: white;
-      box-shadow: 0px 17px 15px -1px rgba(0, 0, 0, 0.1);
-      width: 100px;
-      height: 100px;
-      border-radius: 6px;
-      box-shadow: 0 0 19px 1px rgba(0, 0, 0, 0.12);
+      box-shadow: 0rem 1.0625rem 0.9375rem -0.0625rem rgba(0, 0, 0, 0.1);
+      width: 6.25rem;
+      height: 6.25rem;
+      border-radius: 0.375rem;
+      box-shadow: 0 0 1.1875rem 0.0625rem rgba(0, 0, 0, 0.12);
     `}
   >
     <div
       css={css`
-        font-size: 36px;
-        margin: 6px auto;
+        font-size: 2.25rem;
+        margin: 0.375rem auto;
       `}
     >
       {num}
     </div>
     <div
       css={css`
-        font-size: 12px;
-        letter-spacing: 0.2px;
+        font-size: 0.75rem;
+        letter-spacing: 0.125rem;
         color: ${color.brownGray};
       `}
     >
@@ -91,8 +91,10 @@ export const Countdown = () => {
       <h3
         css={css`
           color: white;
-          font-size: 20px;
+          font-size: 1.25rem;
           font-weight: 600;
+          text-align: center;
+          line-height: 1.4;
         `}
       >
         The biggest mobile developer conference in Thailand will start in
@@ -100,11 +102,11 @@ export const Countdown = () => {
       <div
         css={css`
           display: flex;
-          height: 100px;
-          margin-top: 32px;
+          height: 6.25rem;
+          margin-top: 2rem;
 
           & > div {
-            margin: 0 10px;
+            margin: 0 0.625rem;
           }
         `}
       >

@@ -12,11 +12,11 @@ const Footer = () => (
       background-color: ${color.blue};
       color: white;
       text-align: center;
-      height: 75px;
+      height: 4.6875rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 16px;
+      font-size: 1rem;
     `}
   >
     © 2019 All right reserved, Mobile Conf 2019

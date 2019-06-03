@@ -1,4 +1,6 @@
 import React from "react";
+import { Global, css } from "@emotion/core";
+import { onMobile, onSmallMobile } from "../components/common";
 import SEO from "../components/seo";
 import Layout from "../components/layout";
 import Header from "../sections/header";
@@ -11,6 +13,20 @@ import OurSponsors from "../sections/sponsors";
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`mobile`, `conference`, `thai`]} />
+    <Global
+      styles={css`
+        ${onMobile} {
+          html {
+            font-size: 12px;
+          }
+        }
+        ${onSmallMobile} {
+          html {
+            font-size: 10px;
+          }
+        }
+      `}
+    />
     <Header />
     <AboutUs />
     <Schedule />

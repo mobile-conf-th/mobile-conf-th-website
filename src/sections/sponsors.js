@@ -8,6 +8,9 @@ import BackgroundImage from "gatsby-background-image";
 import Img from "gatsby-image";
 import { css } from "@emotion/core";
 
+const ImgContainer = styled.div`
+  margin: 0.75rem 1rem;
+`;
 const OurSponsors = styled(() => (
   <StaticQuery
     query={graphql`
@@ -101,27 +104,46 @@ const OurSponsors = styled(() => (
               display: flex;
               align-items: center;
               justify-content: space-around;
-              padding: 12px 0;
+              flex-wrap: wrap;
             `}
           >
-            <Img fixed={data.agoda.childImageSharp.fixed} />
-            <Img fixed={data.eventPop.childImageSharp.fixed} />
-            <Img fixed={data.skooldio.childImageSharp.fixed} />
-            <Img fixed={data.gosoft.childImageSharp.fixed} />
+            <ImgContainer>
+              <Img fixed={data.agoda.childImageSharp.fixed} />
+            </ImgContainer>
+            <ImgContainer>
+              <Img fixed={data.eventPop.childImageSharp.fixed} />
+            </ImgContainer>
+            <ImgContainer>
+              <Img fixed={data.skooldio.childImageSharp.fixed} />
+            </ImgContainer>
+            <ImgContainer>
+              <Img fixed={data.gosoft.childImageSharp.fixed} />
+            </ImgContainer>
           </div>
           <div
             css={css`
               display: flex;
               align-items: center;
               justify-content: space-around;
-              padding: 12px 0;
+              padding: 0.75rem 0;
+              flex-wrap: wrap;
             `}
           >
-            <Img fixed={data.thaiProgrammer.childImageSharp.fixed} />
-            <Img fixed={data.thailandKotlin.childImageSharp.fixed} />
-            <Img fixed={data.queq.childImageSharp.fixed} />
-            <Img fixed={data.kbtg.childImageSharp.fixed} />
-            <Img fixed={data.iosDevTh.childImageSharp.fixed} />
+            <ImgContainer>
+              <Img fixed={data.thaiProgrammer.childImageSharp.fixed} />
+            </ImgContainer>
+            <ImgContainer>
+              <Img fixed={data.thailandKotlin.childImageSharp.fixed} />
+            </ImgContainer>
+            <ImgContainer>
+              <Img fixed={data.queq.childImageSharp.fixed} />
+            </ImgContainer>
+            <ImgContainer>
+              <Img fixed={data.kbtg.childImageSharp.fixed} />
+            </ImgContainer>
+            <ImgContainer>
+              <Img fixed={data.iosDevTh.childImageSharp.fixed} />
+            </ImgContainer>
           </div>
         </GenSection>
       </BackgroundImage>

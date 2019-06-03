@@ -12,6 +12,11 @@ export const color = {
 };
 
 export const Container = styled.div`
-  max-width: 1024px;
-  padding: 0 24px;
+  max-width: 64rem;
+  padding: 0 1.5rem;
 `;
+
+export const onSmallMobile = `@media (max-width: 320px)`;
+export const onMobile = `@media (max-width: 768px)`;
+export const onTablet = `@media (max-width: 1024px)`;
+export const onDesktop = `@media (min-width: 1025px)`;

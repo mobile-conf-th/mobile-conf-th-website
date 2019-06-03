@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { color, Container } from "../components/common";
+import { color, onTablet, Container, onDesktop } from "../components/common";
 import { Logo } from "../components/logo";
 import { Countdown } from "../components/countdown";
 import { Global, css } from "@emotion/core";
 import styled from "@emotion/styled";
 import { Link } from "react-scroll";
+import { Hamburger } from "../components/hamburger";
 
 import { StaticQuery, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
@@ -18,8 +19,8 @@ const active = css`
 const navLink = css`
   position: relative;
   cursor: pointer;
-  border: solid transparent 3px;
-  padding-bottom: 10px;
+  border: solid transparent 0.1875rem;
+  padding-bottom: 0.625rem;
 
   &:after {
     content: "";
@@ -27,7 +28,7 @@ const navLink = css`
     left: 0;
     right: 0;
     bottom: 0;
-    height: 3px;
+    height: 0.1875rem;
     background-color: transparent;
     transition: background-color 0.4s ease;
   }
@@ -74,20 +75,34 @@ const Nav = () => {
           margin: 0 auto;
           display: flex;
           align-items: center;
-          height: 75px;
+          height: 4.6875rem;
           justify-content: space-between;
-          max-width: 1248px;
+          max-width: 78rem;
           width: 100%;
         `}
       >
         <Logo />
+        <Hamburger
+          css={css`
+            ${onTablet} {
+              display: inline-block;
+            }
+
+            ${onDesktop} {
+              display: none;
+            }
+          `}
+        />
         <div
           css={css`
             a {
-              margin: 0 10px;
+              margin: 0 0.625rem;
               color: white;
-              font-size: 16px;
+              font-size: 1rem;
               text-decoration: none;
+            }
+            ${onTablet} {
+              display: none;
             }
           `}
         >
@@ -110,18 +125,20 @@ const Nav = () => {
           <Link to="location" {...linkConfig}>
             Location
           </Link>
-          <button
-            css={[
-              css`
-                margin-left: 50px;
+          <a href="http://www.eventpop.me" target="_blank">
+            <button
+              css={[
+                css`
+                  margin-left: 3.125rem;
 
-                ${isTop ? transparentButton : greenButton}
-              `,
-              smallButton
-            ]}
-          >
-            BUY TICKET
-          </button>
+                  ${isTop ? transparentButton : greenButton}
+                `,
+                smallButton
+              ]}
+            >
+              BUY TICKET
+            </button>
+          </a>
         </div>
       </Container>
     </section>
@@ -132,10 +149,10 @@ const Nav = () => {
 
 const baseButtonStyle = css`
   color: white;
-  padding: 10px 15px;
-  border-radius: 6px;
-  width: 175px;
-  height: 50px;
+  padding: 0.625rem 0.9375rem;
+  border-radius: 0.375rem;
+  width: 10.9375rem;
+  height: 3.125rem;
   font-weight: 600;
   transition: border, background-color 0.4s linear;
 `;
@@ -157,7 +174,7 @@ const Button = styled.button`
 const transparentButton = css`
   ${baseButtonStyle}
   background: transparent;
-  border: solid white 2px;
+  border: solid white 0.125rem;
 
   &:hover {
     color: ${color.darkGray};
@@ -170,23 +187,28 @@ const ButtonTransparent = styled.button`
 `;
 
 const smallButton = css`
-  font-size: 16px;
-  width: 150px;
-  height: 40px;
+  font-size: 1rem;
+  width: 9.375rem;
+  height: 2.5rem;
   line-height: 1.1;
 `;
 // Header css
 
 const HeaderSection = styled.section`
-  height: 700px;
+  height: 43.75rem;
   display: flex;
   flex-direction: column;
+
+  ${onTablet} {
+    height: 50.75em;
+  }
 `;
 
 const headerContentContainer = css`
   color: white;
-  margin-top: 110px;
+  margin-top: 6.875rem;
   margin: auto;
+  padding: 0;
 `;
 
 const HeaderContent = styled.div`
@@ -198,25 +220,25 @@ const ActionGroup = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 3.125rem;
 
   ${Button}, ${ButtonTransparent} {
-    margin: 0 17px;
+    margin: 0 1.0625rem;
   }
 `;
 
 const SubTitle = styled.h2`
   line-height: 1;
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 300;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 `;
 
 const Title = styled.h1`
   line-height: 1;
-  font-size: 84px;
+  font-size: 5.25rem;
   font-weight: 700;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
 `;
 
 const green = css`
@@ -272,8 +294,13 @@ const Header = () => {
               <Title css={green}>2019</Title>
             </HeaderContent>
             <ActionGroup>
-              <Button>BUY TICKET</Button>
-              <ButtonTransparent>MORE INFO</ButtonTransparent>
+              <a href="http://www.eventpop.me" target="_blank">
+                <Button>BUY TICKET</Button>
+              </a>
+
+              <Link to="about" {...linkConfig}>
+                <ButtonTransparent>MORE INFO</ButtonTransparent>
+              </Link>
             </ActionGroup>
           </Container>
         </HeaderSection>
@@ -283,7 +310,7 @@ const Header = () => {
           position: absolute;
           left: 0;
           right: 0;
-          bottom: -50px;
+          bottom: -3.125rem;
         `}
       >
         <Countdown />
