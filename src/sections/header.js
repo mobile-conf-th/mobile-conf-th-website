@@ -115,7 +115,9 @@ const Nav = () => {
           width: 100%;
         `}
       >
-        <Logo />
+        <Link to="home" {...linkConfig} css={undefined}>
+          <Logo />
+        </Link>
 
         <Hamburger onClick={() => setOpen(!isOpen)} isOpen={isOpen} />
         <div
