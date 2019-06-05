@@ -108,38 +108,10 @@ const OurSponsors = styled(() => (
             `}
           >
             <ImgContainer>
-              <Img fixed={data.agoda.childImageSharp.fixed} />
-            </ImgContainer>
-            <ImgContainer>
-              <Img fixed={data.eventPop.childImageSharp.fixed} />
-            </ImgContainer>
-            <ImgContainer>
-              <Img fixed={data.skooldio.childImageSharp.fixed} />
-            </ImgContainer>
-            <ImgContainer>
-              <Img fixed={data.gosoft.childImageSharp.fixed} />
-            </ImgContainer>
-          </div>
-          <div
-            css={css`
-              display: flex;
-              align-items: center;
-              justify-content: space-around;
-              padding: 0.75rem 0;
-              flex-wrap: wrap;
-            `}
-          >
-            <ImgContainer>
               <Img fixed={data.thaiProgrammer.childImageSharp.fixed} />
             </ImgContainer>
             <ImgContainer>
               <Img fixed={data.thailandKotlin.childImageSharp.fixed} />
-            </ImgContainer>
-            <ImgContainer>
-              <Img fixed={data.queq.childImageSharp.fixed} />
-            </ImgContainer>
-            <ImgContainer>
-              <Img fixed={data.kbtg.childImageSharp.fixed} />
             </ImgContainer>
             <ImgContainer>
               <Img fixed={data.iosDevTh.childImageSharp.fixed} />
