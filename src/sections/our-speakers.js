@@ -5,6 +5,7 @@ import GenSection from "../components/gen-section";
 import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { css } from "@emotion/core";
+import speakersData from '../data/speakers.json';
 
 const Speaker = ({ img, name, title, topic, time, room }) => {
   const [isShowTopic, setShowTopic] = useState(false);
@@ -122,10 +123,19 @@ const OurSpeakers = () => (
   <StaticQuery
     query={graphql`
       query {
-        speaker: file(relativePath: { eq: "speaker-1.jpg" }) {
-          childImageSharp {
-            fixed(width: 300, height: 275) {
-              ...GatsbyImageSharpFixed_tracedSVG
+        images: allFile(filter: {
+          extension: {regex: "/(jpg)|(jpeg)|(png)/"}
+          relativeDirectory: { eq: "speakers" }
+        }) {
+          edges {
+            node {
+              id
+              name
+              childImageSharp {
+                fixed(width: 300, height: 275) {
+                  ...GatsbyImageSharpFixed_tracedSVG
+                }
+              }
             }
           }
         }
@@ -140,54 +150,23 @@ const OurSpeakers = () => (
             justify-content: center;
           `}
         >
-          <Speaker
-            img={data.speaker.childImageSharp.fixed}
-            name="Pitiphong Phongpattranont"
-            title="iOS developer, Agoda"
-            topic="Mobile first approach in prototype and layers of experience design"
-            time="2.00 pm - 3.00 pm"
-            room="Hall 1"
-          />
-          <Speaker
-            img={data.speaker.childImageSharp.fixed}
-            name="Pitiphong Phongpattranont"
-            title="iOS developer, Agoda"
-            topic="Mobile first approach in prototype and layers of experience design"
-            time="2.00 pm - 3.00 pm"
-            room="Hall 1"
-          />
-          <Speaker
-            img={data.speaker.childImageSharp.fixed}
-            name="Pitiphong Phongpattranont"
-            title="iOS developer, Agoda"
-            topic="Mobile first approach in prototype and layers of experience design"
-            time="2.00 pm - 3.00 pm"
-            room="Hall 1"
-          />
-          <Speaker
-            img={data.speaker.childImageSharp.fixed}
-            name="Pitiphong Phongpattranont"
-            title="iOS developer, Agoda"
-            topic="Mobile first approach in prototype and layers of experience design"
-            time="2.00 pm - 3.00 pm"
-            room="Hall 1"
-          />
-          <Speaker
-            img={data.speaker.childImageSharp.fixed}
-            name="Pitiphong Phongpattranont"
-            title="iOS developer, Agoda"
-            topic="Mobile first approach in prototype and layers of experience design"
-            time="2.00 pm - 3.00 pm"
-            room="Hall 1"
-          />
-          <Speaker
-            img={data.speaker.childImageSharp.fixed}
-            name="Pitiphong Phongpattranont"
-            title="iOS developer, Agoda"
-            topic="Mobile first approach in prototype and layers of experience design"
-            time="2.00 pm - 3.00 pm"
-            room="Hall 1"
-          />
+          {
+            speakersData.map(speaker => (
+              data.images.edges
+                .filter(({node}) => node.name === speaker.img)
+                .map(({node}, index) => (
+                  <Speaker
+                    key={index}
+                    img={node.childImageSharp.fixed}
+                    name={speaker.name}
+                    title={speaker.title}
+                    topic={speaker.topic}
+                    time={speaker.time}
+                    room={speaker.room}
+                  />
+                ))
+            ))
+          }
         </div>
       </GenSection>
     )}
