@@ -5,7 +5,7 @@ import GenSection from "../components/gen-section";
 import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { css } from "@emotion/core";
-import speakersData from '../data/speakers.json';
+import speakersData from "../data/speakers.json";
 
 const Speaker = ({ img, name, title, topic, time, room }) => {
   const [isShowTopic, setShowTopic] = useState(false);
@@ -24,10 +24,34 @@ const Speaker = ({ img, name, title, topic, time, room }) => {
             opacity: 0.9;
           }
         `}
-        onClick={() => setShowTopic(!isShowTopic)}
+        onClick={() => setShowTopic(true)}
+        onMouseEnter={() => setShowTopic(true)}
         onMouseLeave={() => setShowTopic(false)}
       >
         <Img fixed={img} />
+        <div
+          css={css`
+            position: absolute;
+            width: 125px;
+            height: 30px;
+            line-height: 30px;
+            left: 0;
+            top: 15px;
+            color: white;
+            background: ${color.blue};
+
+            text-align: center;
+            vertical-align: middle;
+            font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 300;
+
+            transition: opacity 0.3s ease;
+            ${isShowTopic ? `opacity: 0;` : `opacity: 1;`};
+          `}
+        >
+          VIEW TOPIC
+        </div>
         <div
           css={css`
             transition: opacity 0.3s ease;
@@ -123,10 +147,12 @@ const OurSpeakers = () => (
   <StaticQuery
     query={graphql`
       query {
-        images: allFile(filter: {
-          extension: {regex: "/(jpg)|(jpeg)|(png)/"}
-          relativeDirectory: { eq: "speakers" }
-        }) {
+        images: allFile(
+          filter: {
+            extension: { regex: "/(jpg)|(jpeg)|(png)/" }
+            relativeDirectory: { eq: "speakers" }
+          }
+        ) {
           edges {
             node {
               id
@@ -150,23 +176,21 @@ const OurSpeakers = () => (
             justify-content: center;
           `}
         >
-          {
-            speakersData.map(speaker => (
-              data.images.edges
-                .filter(({node}) => node.name === speaker.img)
-                .map(({node}, index) => (
-                  <Speaker
-                    key={index}
-                    img={node.childImageSharp.fixed}
-                    name={speaker.name}
-                    title={speaker.title}
-                    topic={speaker.topic}
-                    time={speaker.time}
-                    room={speaker.room}
-                  />
-                ))
-            ))
-          }
+          {speakersData.map(speaker =>
+            data.images.edges
+              .filter(({ node }) => node.name === speaker.img)
+              .map(({ node }, index) => (
+                <Speaker
+                  key={index}
+                  img={node.childImageSharp.fixed}
+                  name={speaker.name}
+                  title={speaker.title}
+                  topic={speaker.topic}
+                  time={speaker.time}
+                  room={speaker.room}
+                />
+              ))
+          )}
         </div>
       </GenSection>
     )}
