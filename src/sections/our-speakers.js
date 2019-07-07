@@ -42,7 +42,6 @@ const Speaker = ({ img, name, title, topic, time, room }) => {
 
             text-align: center;
             vertical-align: middle;
-            font-family: Montserrat;
             font-size: 14px;
             font-weight: 300;
 
