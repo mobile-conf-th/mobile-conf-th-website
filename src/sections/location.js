@@ -17,7 +17,7 @@ const Location = () => (
           padding: 0.9375rem;
         `}
       >
-        S31 Hotel
+        S31 Sukhumvit Hotel
       </h4>
       <p>
         545 Sukhumvit Rd, Khwaeng Khlong Toei Nuea, Khet Watthana,
