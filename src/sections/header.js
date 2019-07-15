@@ -136,7 +136,7 @@ const Nav = () => {
           <Global styles={active} />
           <Links />
           <a
-            href="http://www.eventpop.me"
+            href="https://www.eventpop.me/e/5108-mobileconf19"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -191,7 +191,7 @@ const Nav = () => {
         />
         <Links close={() => setOpen(false)} />
         <a
-          href="http://www.eventpop.me"
+          href="https://www.eventpop.me/e/5108-mobileconf19"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -385,7 +385,7 @@ const Header = () => {
             </HeaderContent>
             <ActionGroup>
               <a
-                href="http://www.eventpop.me"
+                href="https://www.eventpop.me/e/5108-mobileconf19"
                 target="_blank"
                 rel="noopener noreferrer"
               >
