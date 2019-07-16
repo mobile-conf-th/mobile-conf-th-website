@@ -29,7 +29,7 @@ const OurSponsors = styled(() => (
             }
           }
         }
-        eventPop: file(relativePath: { eq: "sp-event-pop.png" }) {
+        eventPop: file(relativePath: { eq: "sp-eventpop.png" }) {
           childImageSharp {
             fixed(width: 192, height: 38) {
               ...GatsbyImageSharpFixed_tracedSVG
@@ -85,6 +85,13 @@ const OurSponsors = styled(() => (
             }
           }
         }
+        odds: file(relativePath: { eq: "sp-odds.png" }) {
+          childImageSharp {
+            fixed(width: 250, height: 156) {
+              ...GatsbyImageSharpFixed_tracedSVG
+            }
+          }
+        }
       }
     `}
     render={data => (
@@ -99,6 +106,9 @@ const OurSponsors = styled(() => (
           color="transparent"
           textColor="white"
         >
+          <ImgContainer>
+            <Img fixed={data.odds.childImageSharp.fixed} />
+          </ImgContainer>
           <div
             css={css`
               display: flex;
@@ -115,6 +125,9 @@ const OurSponsors = styled(() => (
             </ImgContainer>
             <ImgContainer>
               <Img fixed={data.iosDevTh.childImageSharp.fixed} />
+            </ImgContainer>
+            <ImgContainer>
+              <Img fixed={data.eventPop.childImageSharp.fixed} />
             </ImgContainer>
           </div>
         </GenSection>
