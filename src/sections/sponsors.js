@@ -22,13 +22,6 @@ const OurSponsors = styled(() => (
             }
           }
         }
-        agoda: file(relativePath: { eq: "sp-agoda.png" }) {
-          childImageSharp {
-            fixed(width: 113, height: 46) {
-              ...GatsbyImageSharpFixed_tracedSVG
-            }
-          }
-        }
         eventPop: file(relativePath: { eq: "sp-eventpop.png" }) {
           childImageSharp {
             fixed(width: 192, height: 38) {
@@ -36,16 +29,9 @@ const OurSponsors = styled(() => (
             }
           }
         }
-        skooldio: file(relativePath: { eq: "sp-skooldio.png" }) {
+        wework: file(relativePath: { eq: "sp-wework.png" }) {
           childImageSharp {
-            fixed(width: 165, height: 56) {
-              ...GatsbyImageSharpFixed_tracedSVG
-            }
-          }
-        }
-        gosoft: file(relativePath: { eq: "sp-gosoft.png" }) {
-          childImageSharp {
-            fixed(width: 146, height: 28) {
+            fixed(width: 60, height: 60) {
               ...GatsbyImageSharpFixed_tracedSVG
             }
           }
@@ -60,20 +46,6 @@ const OurSponsors = styled(() => (
         thailandKotlin: file(relativePath: { eq: "sp-thailand-kotlin.png" }) {
           childImageSharp {
             fixed(width: 182, height: 47) {
-              ...GatsbyImageSharpFixed_tracedSVG
-            }
-          }
-        }
-        queq: file(relativePath: { eq: "sp-queq.png" }) {
-          childImageSharp {
-            fixed(width: 127, height: 69) {
-              ...GatsbyImageSharpFixed_tracedSVG
-            }
-          }
-        }
-        kbtg: file(relativePath: { eq: "sp-kbtg.png" }) {
-          childImageSharp {
-            fixed(width: 97, height: 56) {
               ...GatsbyImageSharpFixed_tracedSVG
             }
           }
@@ -113,7 +85,22 @@ const OurSponsors = styled(() => (
             css={css`
               display: flex;
               align-items: center;
-              justify-content: space-around;
+              justify-content: space-evenly;
+              flex-wrap: wrap;
+            `}
+          >
+            <ImgContainer>
+              <Img fixed={data.eventPop.childImageSharp.fixed} />
+            </ImgContainer>
+            <ImgContainer>
+              <Img fixed={data.wework.childImageSharp.fixed} />
+            </ImgContainer>
+          </div>
+          <div
+            css={css`
+              display: flex;
+              align-items: center;
+              justify-content: space-evenly;
               flex-wrap: wrap;
             `}
           >
@@ -125,9 +112,6 @@ const OurSponsors = styled(() => (
             </ImgContainer>
             <ImgContainer>
               <Img fixed={data.iosDevTh.childImageSharp.fixed} />
-            </ImgContainer>
-            <ImgContainer>
-              <Img fixed={data.eventPop.childImageSharp.fixed} />
             </ImgContainer>
           </div>
         </GenSection>
