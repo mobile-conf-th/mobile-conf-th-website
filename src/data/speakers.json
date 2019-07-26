@@ -1,25 +1,25 @@
 [
   {
-    "img": "avatar-placeholder",
-    "name": "Speaker",
-    "title": "",
-    "topic": "TBA",
+    "img": "Dani",
+    "name": "Dani Devesa",
+    "title": "Senior Mobile Engineer, Skyscanner",
+    "topic": "Accessibility -> Up to 11!",
     "time": "",
     "room": ""
   },
   {
-    "img": "avatar-placeholder",
-    "name": "Speaker",
-    "title": "",
-    "topic": "TBA",
+    "img": "Somkiat",
+    "name": "Somkiat Khitwongwattana",
+    "title": "Android Developer, Nextzy, Android GDE",
+    "topic": "Architecture Components in Real Life - Season 2",
     "time": "",
     "room": ""
   },
   {
-    "img": "avatar-placeholder",
-    "name": "Speaker",
-    "title": "",
-    "topic": "TBA",
+    "img": "Enrique",
+    "name": "Enrique López Mañas",
+    "title": "Google Developer Expert",
+    "topic": "Diving into coroutines",
     "time": "",
     "room": ""
   }
