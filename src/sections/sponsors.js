@@ -59,7 +59,14 @@ const OurSponsors = styled(() => (
         }
         odds: file(relativePath: { eq: "sp-odds.png" }) {
           childImageSharp {
-            fixed(width: 250, height: 156) {
+            fixed(width: 270) {
+              ...GatsbyImageSharpFixed_tracedSVG
+            }
+          }
+        }
+        omise: file(relativePath: { eq: "sp-omise.png" }) {
+          childImageSharp {
+            fixed(width: 250, height: 150) {
               ...GatsbyImageSharpFixed_tracedSVG
             }
           }
@@ -80,6 +87,9 @@ const OurSponsors = styled(() => (
         >
           <ImgContainer>
             <Img fixed={data.odds.childImageSharp.fixed} />
+          </ImgContainer>
+          <ImgContainer>
+            <Img fixed={data.omise.childImageSharp.fixed} />
           </ImgContainer>
           <div
             css={css`
