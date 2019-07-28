@@ -38,7 +38,7 @@ const OurSponsors = styled(() => (
         }
         kpc: file(relativePath: { eq: "sp-kpc.png" }) {
           childImageSharp {
-            fixed(width: 132, height: 80) {
+            fixed(width: 166, height: 100) {
               ...GatsbyImageSharpFixed_tracedSVG
             }
           }
@@ -125,13 +125,13 @@ const OurSponsors = styled(() => (
             `}
           >
             <ImgContainer>
-              <Img fixed={data.thaiProgrammer.childImageSharp.fixed} />
-            </ImgContainer>
-            <ImgContainer>
               <Img fixed={data.thailandKotlin.childImageSharp.fixed} />
             </ImgContainer>
             <ImgContainer>
               <Img fixed={data.iosDevTh.childImageSharp.fixed} />
+            </ImgContainer>
+            <ImgContainer>
+              <Img fixed={data.thaiProgrammer.childImageSharp.fixed} />
             </ImgContainer>
           </div>
         </GenSection>
