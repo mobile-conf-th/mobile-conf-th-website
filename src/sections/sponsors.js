@@ -24,14 +24,21 @@ const OurSponsors = styled(() => (
         }
         eventPop: file(relativePath: { eq: "sp-eventpop.png" }) {
           childImageSharp {
-            fixed(width: 192, height: 38) {
+            fixed(width: 250, height: 50) {
               ...GatsbyImageSharpFixed_tracedSVG
             }
           }
         }
         wework: file(relativePath: { eq: "sp-wework.png" }) {
           childImageSharp {
-            fixed(width: 60, height: 60) {
+            fixed(width: 80, height: 80) {
+              ...GatsbyImageSharpFixed_tracedSVG
+            }
+          }
+        }
+        kpc: file(relativePath: { eq: "sp-kpc.png" }) {
+          childImageSharp {
+            fixed(width: 132, height: 80) {
               ...GatsbyImageSharpFixed_tracedSVG
             }
           }
@@ -104,6 +111,9 @@ const OurSponsors = styled(() => (
             </ImgContainer>
             <ImgContainer>
               <Img fixed={data.wework.childImageSharp.fixed} />
+            </ImgContainer>
+            <ImgContainer>
+              <Img fixed={data.kpc.childImageSharp.fixed} />
             </ImgContainer>
           </div>
           <div
