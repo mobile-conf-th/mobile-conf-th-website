@@ -4,7 +4,7 @@ import GenSection from "../components/gen-section";
 import {onMobile} from '../components/common'
 
 const Location = () => (
-  <GenSection id="location" title="LOCATION">
+  <GenSection id="location" title="VENUE">
     <div
       css={css`
         padding: 0 4rem 3rem;
@@ -20,10 +20,7 @@ const Location = () => (
         S31 Sukhumvit Hotel
       </h4>
       <p>
-        545 Sukhumvit Rd, Khwaeng Khlong Toei Nuea, Khet Watthana,
-      </p>
-      <p>
-        Krung Thep Maha Nakhon 10110
+        545 Sukhumvit Rd, Khwaeng Khlong Toei Nuea,<br />Khet Watthana, Krung Thep Maha Nakhon 10110
       </p>
     </div>
     <div
