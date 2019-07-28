@@ -22,5 +22,29 @@
     "topic": "Diving into coroutines",
     "time": "",
     "room": ""
+  },
+  {
+    "img": "Prathan",
+    "name": "Prathan Phongthiproek",
+    "title": "Cybersecurity Specialist, Secure D Center",
+    "topic": "Mobile Defense-in-Dev(Depth)",
+    "time": "",
+    "room": ""
+  },
+  {
+    "img": "Jason",
+    "name": "Jason Nam",
+    "title": "Software Developer, Nimble",
+    "topic": "Letter to designer and product manager",
+    "time": "",
+    "room": ""
+  },
+  {
+    "img": "Sopana",
+    "name": "Sopana Thitipariwat",
+    "title": "iOS Developer, Eventpop",
+    "topic": "Optimize built time",
+    "time": "",
+    "room": ""
   }
 ]
