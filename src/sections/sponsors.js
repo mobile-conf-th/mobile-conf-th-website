@@ -38,7 +38,7 @@ const OurSponsors = styled(() => (
         }
         kpc: file(relativePath: { eq: "sp-kpc.png" }) {
           childImageSharp {
-            fixed(width: 166, height: 100) {
+            fixed(width: 300, height: 120) {
               ...GatsbyImageSharpFixed_tracedSVG
             }
           }
