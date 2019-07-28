@@ -244,7 +244,7 @@ const SecondHalf = () => {
   );
 };
 const Schedule = () => (
-  <GenSection id="schedule" title="EVENT SCHEDULE">
+  <GenSection id="schedule" title="CONFERENCE SCHEDULE">
     <FirstHalf />
     <SecondHalf />
   </GenSection>

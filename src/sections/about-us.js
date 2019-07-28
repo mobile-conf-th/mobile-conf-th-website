@@ -23,16 +23,14 @@ const AboutUs = () => (
   >
     <p css={textStyle}>
       Mobile Conf is the conference that gathers people who interested to see
-      the future of mobile development. We focus heavily on quality and
-      diversity in our topics, no matter what platform you were working on. Last
-      year, we have more than 300 attendees and 15 speakers with various
-      background and experiences,from CS students to IT Director in one of the
-      biggest IT company in Thailand.
+      the future of mobile development and meet up people with the same interest. 
+      We focus heavily on quality and diversity in our topics, no matter what platform you are working on. 
+      Last year, we were successfully held the conference with more than 300 attendees with various
+      background and experiences, from CS students to Mobile Director in one of the biggest tech company in Thailand.
     </p>
     <p css={textStyle}>
-      Our goal is to have MobileConf become one of the biggest tech conferences
-      that people can joinfrom around the world and we are expanding it in this
-      year.
+      Our main goal is to have Mobile Conf become one of the biggest tech conference
+      that attendees are from around the world and we are working so hard to make it to the next level every year.
     </p>
   </GenSection>
 );
