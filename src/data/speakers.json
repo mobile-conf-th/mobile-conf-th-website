@@ -46,5 +46,29 @@
     "topic": "Optimize built time",
     "time": "",
     "room": ""
+  },
+  {
+    "img": "Suneet",
+    "name": "Suneet Agrawal",
+    "title": "Mobile Developer, ShareChat",
+    "topic": "Cut your APK size with features on demand",
+    "time": "",
+    "room": ""
+  },
+  {
+    "img": "avatar-placeholder",
+    "name": "Awesome Speaker Here",
+    "title": "",
+    "topic": "Spectacular Topic Here",
+    "time": "",
+    "room": ""
+  },
+  {
+    "img": "avatar-placeholder",
+    "name": "Awesome Speaker There",
+    "title": "",
+    "topic": "Spectacular Topic There",
+    "time": "",
+    "room": ""
   }
 ]
