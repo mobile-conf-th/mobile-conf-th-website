@@ -56,18 +56,18 @@
     "room": ""
   },
   {
-    "img": "avatar-placeholder",
-    "name": "Awesome Speaker Here",
-    "title": "",
-    "topic": "Spectacular Topic Here",
+    "img": "Kenneth",
+    "name": "Kenneth Poon",
+    "title": "Principal Software Engineer, SP Digital",
+    "topic": "Localhost XCUITest",
     "time": "",
     "room": ""
   },
   {
-    "img": "avatar-placeholder",
-    "name": "Awesome Speaker There",
-    "title": "",
-    "topic": "Spectacular Topic There",
+    "img": "Travis",
+    "name": "Travis P Subannaphong",
+    "title": "Senior Android Engineer, Fastwork",
+    "topic": "How Kotlin Met Flutter",
     "time": "",
     "room": ""
   }
