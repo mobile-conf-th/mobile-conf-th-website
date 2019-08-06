@@ -31,7 +31,7 @@ const OurSponsors = styled(() => (
         }
         wework: file(relativePath: { eq: "sp-wework.png" }) {
           childImageSharp {
-            fixed(width: 80, height: 80) {
+            fixed(width: 357, height: 80) {
               ...GatsbyImageSharpFixed_tracedSVG
             }
           }
