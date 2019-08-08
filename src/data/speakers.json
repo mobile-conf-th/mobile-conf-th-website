@@ -70,5 +70,29 @@
     "topic": "How Kotlin Met Flutter",
     "time": "",
     "room": ""
+  },
+  {
+    "img": "Jeeraphan",
+    "name": "Jeeraphan Lairat",
+    "title": "Mobile Team Lead, Appsynth",
+    "topic": "Modularization transformation (Thai)",
+    "time": "",
+    "room": ""
+  },
+  {
+    "img": "Samuel",
+    "name": "Samuel Giddins",
+    "title": "Software Engineer, Square",
+    "topic": "Empowering iOS Developers",
+    "time": "",
+    "room": ""
+  },
+  {
+    "img": "avatar-placeholder",
+    "name": "N/A",
+    "title": "N/A",
+    "topic": "N/A",
+    "time": "",
+    "room": ""
   }
 ]
