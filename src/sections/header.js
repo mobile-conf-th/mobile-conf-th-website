@@ -63,7 +63,7 @@ const Links = ({ close }) => (
       Speakers
     </Link>
     <Link to="sponsors" {...linkConfig} onClick={close}>
-      Sponsers
+      Sponsors
     </Link>
     <Link to="location" {...linkConfig} onClick={close}>
       Location
