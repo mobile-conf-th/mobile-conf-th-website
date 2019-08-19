@@ -2,7 +2,7 @@
   "morning": [
     {
       "time": "8:30 am",
-      "title": "Registration",
+      "title": "Registration & Breakfast",
       "speaker": null
     },
     {
@@ -12,79 +12,79 @@
     },
     {
       "time": "9:45 am",
-      "title": "Regular Session 1",
-      "speaker": "TBA"
+      "title": "How Kotlin Met Flutter",
+      "speaker": "Travis P Subannaphong"
     },
     {
-      "time": "10:30 am",
-      "title": "Regular Session 2",
-      "speaker": "TBA"
+      "time": "10:20 am",
+      "title": "Mobile Defense-in-Dev(Depth) (Thai)",
+      "speaker": "Prathan Phongthiproek"
     },
     {
-      "time": "11:10 am",
-      "title": "Regular Session 3",
-      "speaker": "TBA"
+      "time": "10:55 am",
+      "title": "Conversation Design in LINE Business Connect (Thai)",
+      "speaker": "Pornpat Pimjaroen"
     }
   ],
   "afternoon1": [
     {
-      "time": "13:30 pm",
-      "title": "Android Afternoon session 1",
-      "speaker": "TBA"
+      "time": "13:00 pm",
+      "title": "Accessibility -> Up to 11!",
+      "speaker": "Dani Devesa"
     },
     {
-      "time": "14:00 pm",
-      "title": "Android Afternoon session 2",
-      "speaker": "TBA"
+      "time": "13:35 pm",
+      "title": "Empowering iOS Developers",
+      "speaker": "Samuel Giddins"
     },
     {
-      "time": "14:30 pm",
-      "title": "Android Afternoon session 3",
-      "speaker": "TBA"
+      "time": "14:10 pm",
+      "title": "Architecture Components in Real Life - Season 2 (Thai)",
+      "speaker": "Somkiat Khitwongwattana"
     },
     {
-      "time": "15:00 pm",
-      "title": "Android Afternoon session 4",
-      "speaker": "TBA"
+      "time": "14:45 pm",
+      "title": "Diving into coroutines",
+      "speaker": "Enrique López Mañas"
     }
   ],
   "afternoon2": [
     {
-      "time": "13:30 pm",
-      "title": "iOS Afternoon session 1",
-      "speaker": "TBA"
+      "time": "13:00 pm",
+      "title": "Modularization transformation (Thai)",
+      "speaker": "Jeeraphan Lairat"
     },
     {
-      "time": "14:00 pm",
-      "title": "iOS Afternoon session 2",
-      "speaker": "TBA"
+      "time": "13:35 pm",
+      "title": "Cut your APK size with features on demand",
+      "speaker": "Suneet Agrawal"
     },
     {
-      "time": "14:30 pm",
-      "title": "iOS Afternoon session 3",
-      "speaker": "TBA"
+      "time": "14:10 pm",
+      "title": "Optimize built time (Thai)",
+      "speaker": "Sopana Thitipariwat"
     },
     {
-      "time": "15:00 pm",
-      "title": "iOS Afternoon session 4",
-      "speaker": "TBA"
+      "time": "14:45 pm",
+      "title": "Localhost XCUITest",
+      "speaker": "Kenneth Poon"
     }
   ],
   "evening": [
     {
-      "time": "16:15 pm",
-      "title": "Regular Session 4",
-      "speaker": "TBA"
+      "time": "16:00 pm",
+      "title": "Letter to designer and product manager",
+      "speaker": "Jason Nam (남석현)"
     },
     {
-      "time": "16:55 pm",
+      "time": "16:35 pm",
       "title": "Closing Remark",
       "speaker": "Organizers"
     },
     {
-      "time": "17:30 pm",
+      "time": "17:00 pm",
       "title": "After Party",
-      "speaker": "All attendees"
+      "speaker": "Attendees"
     }
   ]
 }

@@ -60,7 +60,7 @@ const MainHall = () => (
       padding: 1rem;
     `}
   >
-    Main Hall
+    Grand Ballroom
   </div>
 );
 const Session = ({ title, speaker }) => (
@@ -195,10 +195,10 @@ const SecondHalf = () => {
         `}
       >
         <div css={tabStyleFor(hall, 1)} onClick={() => setHall(1)}>
-          Hall 1 Sessions
+          Ballroom 1
         </div>
         <div css={tabStyleFor(hall, 2)} onClick={() => setHall(2)}>
-          Hall 2 Sessions
+          Ballroom 2
         </div>
       </div>
 
