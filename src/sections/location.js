@@ -33,7 +33,6 @@ const Location = () => (
         padding: 1rem 1.9375rem;
         border-radius: 0.375rem;
         font-weight: 600;
-        transition: border, background-color 0.4s ease;
         background-color: #8cc63f;
         border: none;
       `}
@@ -46,10 +45,11 @@ const Location = () => (
         position: relative;
         overflow: hidden;
         padding-top: 56.25%;
+        margin-top: 75px;
 
         ${onMobile} {
           padding-top: 100%;
-          margin: 50px -1.5rem -6.25rem;
+          margin: 65px -1.5rem -6.25rem;
         }
 
         iframe {
