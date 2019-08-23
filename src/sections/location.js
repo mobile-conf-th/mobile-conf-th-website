@@ -1,13 +1,14 @@
 import React from "react";
 import { css } from "@emotion/core";
 import GenSection from "../components/gen-section";
-import {onMobile} from '../components/common'
+import { onMobile } from "../components/common";
 
 const Location = () => (
   <GenSection id="location" title="VENUE">
     <div
       css={css`
         padding: 0 4rem 3rem;
+        line-height: 1.65em;
       `}
     >
       <h4
@@ -20,9 +21,26 @@ const Location = () => (
         S31 Sukhumvit Hotel
       </h4>
       <p>
-        545 Sukhumvit Rd, Khwaeng Khlong Toei Nuea,<br />Khet Watthana, Krung Thep Maha Nakhon 10110
+        545 Sukhumvit Rd, Khwaeng Khlong Toei Nuea,
+        <br />
+        Khet Watthana, Krung Thep Maha Nakhon 10110
       </p>
     </div>
+    <a
+      css={css`
+        text-decoration: none;
+        color: white;
+        padding: 1rem 1.9375rem;
+        border-radius: 0.375rem;
+        font-weight: 600;
+        transition: border, background-color 0.4s ease;
+        background-color: #8cc63f;
+        border: none;
+      `}
+      href="https://goo.gl/maps/b2AH8SW3wcbhntMo6"
+    >
+      Get Direction
+    </a>
     <div
       css={css`
         position: relative;
@@ -31,7 +49,7 @@ const Location = () => (
 
         ${onMobile} {
           padding-top: 100%;
-          margin: 0 -1.5rem -6.25rem;
+          margin: 50px -1.5rem -6.25rem;
         }
 
         iframe {

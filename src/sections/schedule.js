@@ -21,6 +21,7 @@ const SessionList = styled.div`
   display: grid;
   grid-template-columns: 7.8125rem auto;
   grid-column: span 2;
+  background-color: #f8f8f8;
 `;
 
 const tableGridStyle = css`

@@ -134,7 +134,7 @@ const Speaker = ({ img, name, title, topic, time, room }) => {
       </span>
       <span
         css={css`
-          font-size: 13.5;
+          font-size: 0.875em;
         `}
       >
         {title}
