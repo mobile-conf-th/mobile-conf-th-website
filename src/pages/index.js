@@ -14,7 +14,7 @@ const IndexPage = () => (
   <Layout>
     <SEO
       lang="th"
-      keywords={[`mobile`, `conference`, `conf`, `thailand`, `2019`]}
+      keywords={[`mobile`, `conference`, `conf`, `thailand`, `2020`, `ios`, `android`, `flutter`, `react-native`, `bangkok`]}
     />
     <Global
       styles={css`

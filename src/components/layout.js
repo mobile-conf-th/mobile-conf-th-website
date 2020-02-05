@@ -19,7 +19,7 @@ const Footer = () => (
       font-size: 1rem;
     `}
   >
-    © 2019 All right reserved, Mobile Conf 2019
+    © 2020 All right reserved, Mobile Conf TH
   </footer>
 );
 

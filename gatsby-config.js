@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Mobile Conf Thailand 2019`,
+    title: `Mobile Conf Thailand 2020`,
     description: `biggest mobile conference in Thailand`,
     author: `@iboss-ptk`
   },

@@ -363,7 +363,7 @@ const Header = () => {
             <HeaderContent>
               <SubTitle>WELCOME TO</SubTitle>
               <Title>MOBILE CONF</Title>
-              <Title css={green}>2019</Title>
+              <Title css={green}>2020</Title>
 
               <div
                 css={css`
@@ -380,7 +380,7 @@ const Header = () => {
                   font-size: 1.5rem;
                 `}
               >
-                24 AUGUST 2019
+                29 AUGUST 2020
               </div>
             </HeaderContent>
             <ActionGroup>

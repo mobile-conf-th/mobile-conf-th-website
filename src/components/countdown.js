@@ -75,7 +75,7 @@ const remainingTimeUntil = (now, target) => {
 };
 
 const getRemainingTime = () =>
-  remainingTimeUntil(new Date(), parseISO("2019-08-24T08:30:30+07:00"));
+  remainingTimeUntil(new Date(), parseISO("2020-08-29T08:30:30+07:00"));
 
 export const Countdown = () => {
   const [remainingTime, setRemainingTime] = useState(getRemainingTime());
